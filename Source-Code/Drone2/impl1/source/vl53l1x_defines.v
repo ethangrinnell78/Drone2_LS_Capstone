@@ -151,7 +151,7 @@
 
 
 `define VL53L1X_IDENTIFICATION_MODEL_ID                                         16'hEACC     //  Chip ID of VL53L1X
-`define VL53L1X_SLAVE_ADDRESS                                                   7'b101001    //  VL53L1X SLAVE address 0x29
+`define VL53L1X_SLAVE_ADDRESS                                                   7'b101001    //  VL53L1X SLAVE address 0x29 (Write 0x52 on I2C bus including WR bit set to 0)
 
 
 `define VL53L1X_DATA_RX_BYTE_REG_CNT                                            8            //  The number of byte registers used to receive all measurement data

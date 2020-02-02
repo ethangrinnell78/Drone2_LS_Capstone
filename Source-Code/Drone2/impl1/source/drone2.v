@@ -124,7 +124,9 @@ module drone2 (
         next_VL53L1X_firm_rdy,
         next_VL53L1X_data_rdy,
         next_i2c_driver_debug,
-        next_i2c_top_debug;
+        next_i2c_top_debug,
+        next_i2c_device_driver_return_state,
+        next_i2c_device_driver_state;
         
     reg [`IMU_VAL_BIT_WIDTH-1:0]
         x_rotation_angle,
@@ -158,7 +160,9 @@ module drone2 (
         VL53L1X_firm_rdy,
         VL53L1X_data_rdy,
         i2c_driver_debug,
-        i2c_top_debug;
+        i2c_top_debug,
+        i2c_device_driver_return_state,
+        i2c_device_driver_state;
     wire ac_active;
     reg  imu_good;
     wire next_imu_good;
@@ -167,6 +171,8 @@ module drone2 (
     reg  imu_data_valid;
     reg  force_i2c_stall_n;
     wire next_imu_data_valid;
+    wire [7:0] next_led_data;
+    reg  [7:0] led_data;
     
     
     //wire trash;
@@ -328,7 +334,9 @@ module drone2 (
         .resetn_imu(resetn_imu),
         .resetn_lidar(resetn_lidar),
         // DEBUG WIRE
-        .led_data_out(next_i2c_driver_debug),
+        .led_data_out(next_led_data),
+        .i2c_device_driver_return_state_out(next_i2c_device_driver_return_state),
+        .i2c_device_driver_state_out(next_i2c_device_driver_state),
         .i2c_top_debug(next_i2c_top_debug),
         // InOuts
         .scl_1(scl_1),
@@ -533,16 +541,13 @@ module drone2 (
         .debug_12_in_16_bits({8'd0, aux2_val}),
         .debug_13_in_16_bits({8'd0, swa_swb_val}),
         //.debug_14_in_16_bits({11'd0, switch_b, switch_a}),
-        .debug_14_in_16_bits({8'd0, i2c_driver_debug}),
-        //.debug_15_in_16_bits(yaac_yaw_angle_target),
-        //.debug_15_in_16_bits(VL53L1X_chip_id),
-        .debug_15_in_16_bits({8'd0, i2c_top_debug}),
-        //.debug_16_in_16_bits({8'd0, i2c_driver_debug}),
+        .debug_14_in_16_bits({8'd0, i2c_device_driver_return_state}),
+        .debug_15_in_16_bits({8'd0, i2c_device_driver_state}),
         .debug_16_in_16_bits(VL53L1X_chip_id),
         .debug_17_in_16_bits({8'd0, VL53L1X_firm_rdy}),
         .debug_18_in_16_bits({8'd0, VL53L1X_data_rdy}),
         .debug_19_in_16_bits(VL53L1X_range_mm)
-        //.debug_19_in_16_bits({8'd0, i2c_top_debug})
+
 
     );
 //*/
@@ -588,8 +593,11 @@ module drone2 (
             imu_data_valid    <= `FALSE;
             imu_good          <= `FALSE;
             lidar_good        <= `FALSE;
+            led_data          <= 'd0;
             i2c_driver_debug  <= 'd0;
             i2c_top_debug     <= 'd0;
+            i2c_device_driver_return_state <= 'd0;
+            i2c_device_driver_state        <= 'd0;
         end
         else begin
             x_rotation_angle  <= next_x_rotation_angle;
@@ -623,8 +631,11 @@ module drone2 (
             imu_data_valid    <= next_imu_data_valid;
             imu_good          <= next_imu_good;
             lidar_good        <= next_lidar_good;
+            led_data          <= next_led_data;
             i2c_driver_debug  <= next_i2c_driver_debug;
             i2c_top_debug     <= next_i2c_top_debug;
+            i2c_device_driver_return_state <= next_i2c_device_driver_return_state;
+            i2c_device_driver_state        <= next_i2c_device_driver_state;
         end
     end
     
@@ -643,11 +654,11 @@ module drone2 (
     // Update on board LEDs, all inputs are active low
     always @(posedge sys_clk, negedge resetn) begin
         if (!resetn) begin
-            //led_data_out <= 8'hAA;
-            led_data_out <= 8'hFF;
+            led_data_out <= 8'hAA;
+            //led_data_out <= 8'hFF;
         end
         else begin
-            led_data_out <= ~(i2c_driver_debug<<1); // Shifted one bit left because D2 is burned out on my board
+            led_data_out <= ~(led_data<<1); // Shifted one bit left because D2 is burned out on my board
         end
     end
 endmodule

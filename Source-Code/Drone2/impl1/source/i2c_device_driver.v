@@ -48,6 +48,8 @@ module i2c_device_driver #(
     input  wire resetn,
 //    output reg  [7:0]led_data_out,
     output wire [7:0]led_data_out,
+    output wire [7:0]i2c_device_driver_return_state_out,
+    output wire [7:0]i2c_device_driver_state_out,
     output wire [7:0]i2c_top_debug,                         //  Debug signals for I2C top
     input  wire sys_clk,
     input  wire next_mod_active,
@@ -120,7 +122,9 @@ module i2c_device_driver #(
     //
     // Changed this from 81 to 41 since LED2 is burned out on the board I am testing with
     //assign led_data_out = (i2c_state    <= `I2C_DRV_STATE_BOOT_WAIT ) ? 8'h41 : BNO055_data_rx_reg[led_view_index]; //  Output for calibration status LEDs OR indicates that the IMU is in reset
-    assign led_data_out = return_state;
+    assign led_data_out                       = i2c_state;
+    assign i2c_device_driver_return_state_out = return_state;
+    assign i2c_device_driver_state_out        = i2c_state;
     //assign led_data_out = VL53L1X_data_rx_reg_index;
 
 
@@ -492,6 +496,7 @@ module i2c_device_driver #(
                     next_return_state  = `I2C_STATE_CAL_RESTORE_NEXT;
                     next_data_reg      = cal_reg_addr;
                     next_read_write_in = `I2C_WRITE;
+                    next_is_2_byte_reg = `TRUE;
                     case(cal_reg_addr)
                         `VL53L1X_PAD_I2C_HV_CONFIG_ADDR                             : next_data_tx = `VL53L1X_INIT_VAL_PAD_I2C_HV_CONFIG;
                         `VL53L1X_PAD_I2C_HV_EXTSUP_CONFIG_ADDR                      : next_data_tx = `VL53L1X_INIT_VAL_PAD_I2C_HV_EXTSUP_CONFIG;
@@ -697,7 +702,8 @@ module i2c_device_driver #(
                     next_go_flag           = `NOT_GO;
                     next_i2c_state         = `I2C_VL53L1X_STATE_SET_MEASUREMENT_PERIOD_TX_PERIOD;
                     // measurement period = result from previous * 100 * 1.075 = result from previous * 107.5 = (result from previous * 107)/2
-                    next_VL53L1X_measurement_period = ((VL53L1X_osc_cal_val * 107)>>>2);
+                    next_VL53L1X_measurement_period  = ((VL53L1X_osc_cal_val * 107)>>>2);
+                    next_measurement_period_tx_index = 3'd3;
                 end
                 `I2C_VL53L1X_STATE_SET_MEASUREMENT_PERIOD_TX_PERIOD: begin
                     next_imu_good          = `TRUE;
@@ -710,6 +716,8 @@ module i2c_device_driver #(
                         next_return_state  = `I2C_VL53L1X_STATE_SET_MEASUREMENT_PERIOD_TX_PERIOD;
                     next_i2c_state         = `I2C_DRV_SUB_STATE_START;
                     next_data_reg          = `VL53L1X_SYSTEM_INTERMEASUREMENT_PERIOD_3_ADDR;
+                    next_read_write_in     = `I2C_WRITE;
+                    next_is_2_byte_reg     = `TRUE;
                     case(measurement_period_tx_index)
                         3'd0    : next_data_tx = VL53L1X_measurement_period[7 :0 ]; 
                         3'd1    : next_data_tx = VL53L1X_measurement_period[15:8 ];  
@@ -717,8 +725,6 @@ module i2c_device_driver #(
                         3'd3    : next_data_tx = VL53L1X_measurement_period[31:24];
                         default : next_data_tx = 8'd0;
                     endcase
-                    next_read_write_in     = `I2C_WRITE;
-                    next_is_2_byte_reg     = `TRUE;
                 end
                 `I2C_VL53L1X_STATE_START_MEASURE: begin
                     next_imu_good          = `TRUE;
