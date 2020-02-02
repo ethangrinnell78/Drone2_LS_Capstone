@@ -9,9 +9,6 @@
         <Source name="impl1/source/bno055_defines.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="impl1/source/bno055_driver.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
         <Source name="impl1/source/common_defines.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
@@ -84,10 +81,31 @@
         <Source name="impl1/source/flight_mode.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="impl1/source/auto_mode_controller.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/i2c_device_driver.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/test_i2c_device_driver.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
+        <Source name="impl1/source/i2c_driver_defines.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../testing_files/i2c_sim/i2c_slave_model.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
+        <Source name="../testing_files/i2c_sim/i2c_slave_model_2B_reg.v" type="Verilog" type_short="Verilog" syn_sim="SimOnly">
+            <Options/>
+        </Source>
         <Source name="Drone2.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
         </Source>
         <Source name="impl1/impl1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+        <Source name="test/test.spf" type="Simulation Project File" type_short="SPF">
             <Options/>
         </Source>
     </Implementation>
