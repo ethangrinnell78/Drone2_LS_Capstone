@@ -492,6 +492,7 @@ module i2c_device_driver #(
                     next_return_state  = `I2C_STATE_CAL_RESTORE_NEXT;
                     next_data_reg      = cal_reg_addr;
                     next_read_write_in = `I2C_WRITE;
+                    next_is_2_byte_reg = `TRUE;
                     case(cal_reg_addr)
                         `VL53L1X_PAD_I2C_HV_CONFIG_ADDR                             : next_data_tx = `VL53L1X_INIT_VAL_PAD_I2C_HV_CONFIG;
                         `VL53L1X_PAD_I2C_HV_EXTSUP_CONFIG_ADDR                      : next_data_tx = `VL53L1X_INIT_VAL_PAD_I2C_HV_EXTSUP_CONFIG;
@@ -697,7 +698,8 @@ module i2c_device_driver #(
                     next_go_flag           = `NOT_GO;
                     next_i2c_state         = `I2C_VL53L1X_STATE_SET_MEASUREMENT_PERIOD_TX_PERIOD;
                     // measurement period = result from previous * 100 * 1.075 = result from previous * 107.5 = (result from previous * 107)/2
-                    next_VL53L1X_measurement_period = ((VL53L1X_osc_cal_val * 107)>>>2);
+                    next_VL53L1X_measurement_period  = ((VL53L1X_osc_cal_val * 107)>>>2);
+                    next_measurement_period_tx_index = 3'd3;
                 end
                 `I2C_VL53L1X_STATE_SET_MEASUREMENT_PERIOD_TX_PERIOD: begin
                     next_imu_good          = `TRUE;
@@ -710,6 +712,8 @@ module i2c_device_driver #(
                         next_return_state  = `I2C_VL53L1X_STATE_SET_MEASUREMENT_PERIOD_TX_PERIOD;
                     next_i2c_state         = `I2C_DRV_SUB_STATE_START;
                     next_data_reg          = `VL53L1X_SYSTEM_INTERMEASUREMENT_PERIOD_3_ADDR;
+                    next_read_write_in     = `I2C_WRITE;
+                    next_is_2_byte_reg     = `TRUE;
                     case(measurement_period_tx_index)
                         3'd0    : next_data_tx = VL53L1X_measurement_period[7 :0 ]; 
                         3'd1    : next_data_tx = VL53L1X_measurement_period[15:8 ];  
@@ -717,8 +721,6 @@ module i2c_device_driver #(
                         3'd3    : next_data_tx = VL53L1X_measurement_period[31:24];
                         default : next_data_tx = 8'd0;
                     endcase
-                    next_read_write_in     = `I2C_WRITE;
-                    next_is_2_byte_reg     = `TRUE;
                 end
                 `I2C_VL53L1X_STATE_START_MEASURE: begin
                     next_imu_good          = `TRUE;
