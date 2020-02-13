@@ -113,12 +113,12 @@ module auto_mode_controller (
             auto_state                  <= STATE_AUTO_FAILSAFE;
             complete_signal             <= `FALSE;
             active_signal               <= `FALSE;
-            throttle_pwm_val_calc       <= 8'b0;
-            throttle_pwm_val_latched    <= 8'b0;
-            throttle_pwm_val_out        <= 8'b0;
+            throttle_pwm_val_calc       <= 8'd0;
+            throttle_pwm_val_latched    <= 8'd0;
+            throttle_pwm_val_out        <= 8'd0;
             in_air_flag                 <= `FALSE;
             on_ground_flag              <= `TRUE;
-            debug                       <= 16'b0;
+            debug                       <= 16'd0;
         end
         else begin
             state                       <= next_state;
@@ -236,9 +236,9 @@ module auto_mode_controller (
             next_active_signal               = `FALSE;
             clear_auto_mode_timer            = `FALSE;
             next_z_linear_velocity_latched   = 16'd0;
-            next_throttle_pwm_val_latched    = 8'b0;
-            next_throttle_pwm_val_calc       = 8'b0;
-            next_throttle_pwm_val_out        = 8'b0;
+            next_throttle_pwm_val_latched    = 8'd0;
+            next_throttle_pwm_val_calc       = 8'd0;
+            next_throttle_pwm_val_out        = 8'd0;
             next_in_air_flag                 = `FALSE;
             next_on_ground_flag              = `TRUE;
             next_debug                       = 32'd0;
@@ -257,7 +257,7 @@ module auto_mode_controller (
                     next_complete_signal             = `FALSE;
                     next_active_signal               = `FALSE;
                     clear_auto_mode_timer            = `FALSE;
-                    next_throttle_pwm_val_out        = 16'b0;
+                    next_throttle_pwm_val_out        = 16'd0;
                 end
                 STATE_WAIT           : begin
                     next_complete_signal             = `FALSE;

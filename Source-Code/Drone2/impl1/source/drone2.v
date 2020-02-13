@@ -233,8 +233,6 @@ module drone2 (
     
     wire [15:0] z_linear_velocity;
 
-    assign z_linear_velocity = 0;
-
     /**
      * Generate System Clock
      */
@@ -349,6 +347,16 @@ module drone2 (
         //.force_i2c_stall_n(force_i2c_stall_n),
         .next_mod_active(throttle_controller_active)
     );
+    
+    
+    z_linear_velocity_comp ZLV (
+        .z_linear_velocity(z_linear_velocity),
+        .z_altitude_mm(VL53L1X_range_mm),
+        .start_signal(imu_data_valid),
+        .resetn(resetn),
+        .us_clk(sys_clk)
+    );
+
 
         
     auto_mode_controller AMC (
@@ -497,7 +505,7 @@ module drone2 (
         .motor_4_rate(motor_4_rate),
         .us_clk(us_clk),
         .resetn(resetn));
-    
+          
 /*
     // 2 word debug instead of the whole bunch    
     uart_top #(.NUM_DEBUG_ELEMENTS(8'd2), .FIXED_INTERVAL(760)) uart
@@ -537,16 +545,18 @@ module drone2 (
         .debug_8_in_16_bits({8'd0, yaw_val}),
         .debug_9_in_16_bits({8'd0, roll_val}),
         .debug_10_in_16_bits({8'd0, pitch_val}),
-        .debug_11_in_16_bits({8'd0, aux1_val}),
-        .debug_12_in_16_bits({8'd0, aux2_val}),
-        .debug_13_in_16_bits({8'd0, swa_swb_val}),
+        //.debug_11_in_16_bits({8'd0, aux1_val}),
+        //.debug_12_in_16_bits({8'd0, aux2_val}),
+        .debug_11_in_16_bits({8'd0, swa_swb_val}),
         //.debug_14_in_16_bits({11'd0, switch_b, switch_a}),
-        .debug_14_in_16_bits({8'd0, i2c_device_driver_return_state}),
-        .debug_15_in_16_bits({8'd0, i2c_device_driver_state}),
-        .debug_16_in_16_bits(VL53L1X_chip_id),
-        .debug_17_in_16_bits({8'd0, VL53L1X_firm_rdy}),
-        .debug_18_in_16_bits({8'd0, VL53L1X_data_rdy}),
-        .debug_19_in_16_bits(VL53L1X_range_mm)
+        .debug_12_in_16_bits({8'd0, i2c_device_driver_return_state}),
+        .debug_13_in_16_bits({8'd0, i2c_device_driver_state}),
+        .debug_14_in_16_bits(VL53L1X_chip_id),
+        .debug_15_in_16_bits({8'd0, VL53L1X_firm_rdy}),
+        .debug_16_in_16_bits({8'd0, VL53L1X_data_rdy}),
+        .debug_17_in_16_bits(VL53L1X_range_mm),
+        .debug_18_in_16_bits(z_linear_velocity),
+        .debug_19_in_16_bits(amc_debug)
 
 
     );
