@@ -151,7 +151,8 @@ module auto_mode_controller (
             endcase
             
             // Auto mode (Minor) FSM next state
-            if (next_state != STATE_AUTO_SUB_STATE) 
+            //Only updated auto_state when current state is the major state just prior to the auto sub-state
+            if (state != (STATE_AUTO_SUB_STATE - 1)) 
                 next_auto_state = auto_state;
             else begin
                 case(auto_state)
@@ -281,7 +282,7 @@ module auto_mode_controller (
                 end
             endcase
             
-            if(next_state != STATE_AUTO_SUB_STATE) begin            
+            if(state != (STATE_AUTO_SUB_STATE - 1)) begin            
                 // Do nothing
             end
             else begin
