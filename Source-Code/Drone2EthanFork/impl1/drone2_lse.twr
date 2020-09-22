@@ -1,0 +1,535 @@
+--------------------------------------------------------------------------------
+Lattice Synthesis Timing Report, Version  
+Sun Sep 13 15:50:56 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+Report Information
+------------------
+Design:     drone2
+Constraint file:  
+Report level:    verbose report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk8 [get_nets \ZLV/next_state_4__N_1576]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk7 [get_nets \AMC/next_state_4__N_1669]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk6 [get_nets \AMC/next_complete_signal_N_1862]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk5 [get_nets \AMC/next_auto_state_8__N_1765]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk4 [get_nets \I2C_Devices/i2c/data_latch]
+            38 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 20.363ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3DX    CK             \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_reset  (from \I2C_Devices/i2c/data_latch +)
+   Destination:    FD1S3DX    D              \I2C_Devices/i2c/byte_rd_left_i5  (to \I2C_Devices/i2c/data_latch +)
+
+   Delay:                   5.806ns  (30.1% logic, 69.9% route), 4 logic levels.
+
+ Constraint Details:
+
+      5.806ns data_path \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_reset to \I2C_Devices/i2c/byte_rd_left_i5 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 20.363ns
+
+ Path Details: \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_reset to \I2C_Devices/i2c/byte_rd_left_i5
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_reset (from \I2C_Devices/i2c/data_latch)
+Route         3   e 1.099                                  \I2C_Devices/i2c/n30623
+LUT4        ---     0.448              A to Z              \I2C_Devices/i2c/i19952_3_lut_rep_503
+Route         6   e 1.218                                  \I2C_Devices/i2c/n52439
+LUT4        ---     0.448              B to Z              \I2C_Devices/i2c/i7659_2_lut_rep_303_3_lut
+Route         2   e 0.954                                  \I2C_Devices/i2c/n52239
+LUT4        ---     0.448              B to Z              \I2C_Devices/i2c/i1_2_lut_3_lut_4_lut_adj_314
+Route         1   e 0.788                                  \I2C_Devices/i2c/byte_rd_left_5__N_1248[5]
+                  --------
+                    5.806  (30.1% logic, 69.9% route), 4 logic levels.
+
+
+Passed:  The following path meets requirements by 20.363ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3BX    CK             \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_set  (from \I2C_Devices/i2c/data_latch +)
+   Destination:    FD1S3DX    D              \I2C_Devices/i2c/byte_rd_left_i5  (to \I2C_Devices/i2c/data_latch +)
+
+   Delay:                   5.806ns  (30.1% logic, 69.9% route), 4 logic levels.
+
+ Constraint Details:
+
+      5.806ns data_path \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_set to \I2C_Devices/i2c/byte_rd_left_i5 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 20.363ns
+
+ Path Details: \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_set to \I2C_Devices/i2c/byte_rd_left_i5
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i2c/byte_rd_left_i0_19950_19951_set (from \I2C_Devices/i2c/data_latch)
+Route         3   e 1.099                                  \I2C_Devices/i2c/n30622
+LUT4        ---     0.448              B to Z              \I2C_Devices/i2c/i19952_3_lut_rep_503
+Route         6   e 1.218                                  \I2C_Devices/i2c/n52439
+LUT4        ---     0.448              B to Z              \I2C_Devices/i2c/i7659_2_lut_rep_303_3_lut
+Route         2   e 0.954                                  \I2C_Devices/i2c/n52239
+LUT4        ---     0.448              B to Z              \I2C_Devices/i2c/i1_2_lut_3_lut_4_lut_adj_314
+Route         1   e 0.788                                  \I2C_Devices/i2c/byte_rd_left_5__N_1248[5]
+                  --------
+                    5.806  (30.1% logic, 69.9% route), 4 logic levels.
+
+
+Passed:  The following path meets requirements by 20.411ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3BX    CK             \I2C_Devices/i2c/byte_rd_left_i1_19954_19955_set  (from \I2C_Devices/i2c/data_latch +)
+   Destination:    FD1S3DX    D              \I2C_Devices/i2c/byte_rd_left_i4  (to \I2C_Devices/i2c/data_latch +)
+
+   Delay:                   5.758ns  (30.3% logic, 69.7% route), 4 logic levels.
+
+ Constraint Details:
+
+      5.758ns data_path \I2C_Devices/i2c/byte_rd_left_i1_19954_19955_set to \I2C_Devices/i2c/byte_rd_left_i4 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 20.411ns
+
+ Path Details: \I2C_Devices/i2c/byte_rd_left_i1_19954_19955_set to \I2C_Devices/i2c/byte_rd_left_i4
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i2c/byte_rd_left_i1_19954_19955_set (from \I2C_Devices/i2c/data_latch)
+Route         1   e 0.788                                  \I2C_Devices/i2c/n30626
+LUT4        ---     0.448              B to Z              \I2C_Devices/i2c/i19956_3_lut
+Route         6   e 1.218                                  \I2C_Devices/i2c/byte_rd_left[1]
+LUT4        ---     0.448              D to Z              \I2C_Devices/i2c/i7651_2_lut_rep_350_4_lut
+Route         3   e 1.051                                  \I2C_Devices/i2c/n52286
+LUT4        ---     0.448              B to Z              \I2C_Devices/i2c/i1_2_lut_3_lut_4_lut_adj_302
+Route         2   e 0.954                                  \I2C_Devices/i2c/byte_rd_left_5__N_1248[4]
+                  --------
+                    5.758  (30.3% logic, 69.7% route), 4 logic levels.
+
+Report: 5.952 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk3 [get_nets \I2C_Devices/next_addr_7__N_1168]
+            3 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 18.989ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S1D     CK             \I2C_Devices/i19945  (from \I2C_Devices/next_addr_7__N_1168 +)
+   Destination:    FD1S1D     CD             \I2C_Devices/i19945  (to \I2C_Devices/next_addr_7__N_1168 +)
+
+   Delay:                   7.180ns  (30.6% logic, 69.4% route), 5 logic levels.
+
+ Constraint Details:
+
+      7.180ns data_path \I2C_Devices/i19945 to \I2C_Devices/i19945 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 18.989ns
+
+ Path Details: \I2C_Devices/i19945 to \I2C_Devices/i19945
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i19945 (from \I2C_Devices/next_addr_7__N_1168)
+Route         2   e 1.002                                  \I2C_Devices/n30617
+LUT4        ---     0.448              C to Z              \I2C_Devices/i19948_3_lut_rep_510
+Route         8   e 1.287                                  \I2C_Devices/n52446
+LUT4        ---     0.448              D to Z              \I2C_Devices/mux_3485_i2_4_lut
+Route         1   e 0.788                                  \I2C_Devices/n6920
+LUT4        ---     0.448              D to Z              \I2C_Devices/mux_3489_i2_3_lut_4_lut
+Route         2   e 0.954                                  \I2C_Devices/next_VL53L1X_data_rx_reg_index[1]
+LUT4        ---     0.448              C to Z              \I2C_Devices/i39455_3_lut_4_lut
+Route         2   e 0.954                                  \I2C_Devices/VL53L1X_data_rx_reg_index_5__N_460
+                  --------
+                    7.180  (30.6% logic, 69.4% route), 5 logic levels.
+
+
+Passed:  The following path meets requirements by 19.203ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S1D     CK             \I2C_Devices/i19941  (from \I2C_Devices/next_addr_7__N_1168 +)
+   Destination:    FD1S1D     CD             \I2C_Devices/i19941  (to \I2C_Devices/next_addr_7__N_1168 +)
+
+   Delay:                   6.966ns  (31.5% logic, 68.5% route), 5 logic levels.
+
+ Constraint Details:
+
+      6.966ns data_path \I2C_Devices/i19941 to \I2C_Devices/i19941 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 19.203ns
+
+ Path Details: \I2C_Devices/i19941 to \I2C_Devices/i19941
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i19941 (from \I2C_Devices/next_addr_7__N_1168)
+Route         1   e 0.788                                  \I2C_Devices/n30613
+LUT4        ---     0.448              C to Z              \I2C_Devices/i19944_3_lut
+Route         8   e 1.287                                  \I2C_Devices/VL53L1X_data_rx_reg_index[2]
+LUT4        ---     0.448              D to Z              \I2C_Devices/mux_3485_i3_4_lut
+Route         1   e 0.788                                  \I2C_Devices/n6919
+LUT4        ---     0.448              D to Z              \I2C_Devices/mux_3489_i3_3_lut_4_lut
+Route         2   e 0.954                                  \I2C_Devices/next_VL53L1X_data_rx_reg_index[2]
+LUT4        ---     0.448              C to Z              \I2C_Devices/i39453_3_lut_4_lut
+Route         2   e 0.954                                  \I2C_Devices/VL53L1X_data_rx_reg_index_5__N_457
+                  --------
+                    6.966  (31.5% logic, 68.5% route), 5 logic levels.
+
+
+Passed:  The following path meets requirements by 19.800ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S1D     CK             \I2C_Devices/i19656  (from \I2C_Devices/next_addr_7__N_1168 +)
+   Destination:    FD1S1D     CD             \I2C_Devices/i19656  (to \I2C_Devices/next_addr_7__N_1168 +)
+
+   Delay:                   6.369ns  (27.4% logic, 72.6% route), 4 logic levels.
+
+ Constraint Details:
+
+      6.369ns data_path \I2C_Devices/i19656 to \I2C_Devices/i19656 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 19.800ns
+
+ Path Details: \I2C_Devices/i19656 to \I2C_Devices/i19656
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i19656 (from \I2C_Devices/next_addr_7__N_1168)
+Route         2   e 1.002                                  \I2C_Devices/n30328
+LUT4        ---     0.448              C to Z              \I2C_Devices/i19659_3_lut_rep_511
+Route        39   e 1.712                                  \I2C_Devices/n52447
+LUT4        ---     0.448              D to Z              \I2C_Devices/mux_3485_i1_4_lut
+Route         2   e 0.954                                  \I2C_Devices/n6921
+LUT4        ---     0.448              C to Z              \I2C_Devices/i39458_2_lut_3_lut_4_lut
+Route         2   e 0.954                                  \I2C_Devices/VL53L1X_data_rx_reg_index_5__N_463
+                  --------
+                    6.369  (27.4% logic, 72.6% route), 4 logic levels.
+
+Report: 7.326 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk2 [get_nets \I2C_Devices/i2c/next_ack_flag_N_1498]
+            0 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk1 [get_nets us_clk]
+            1226 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 16.352ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \pwm_generator/period_counter__i11  (from us_clk +)
+   Destination:    FD1S3JX    D              \pwm_generator/pwm2/state_i0  (to us_clk +)
+
+   Delay:                   9.817ns  (31.5% logic, 68.5% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.817ns data_path \pwm_generator/period_counter__i11 to \pwm_generator/pwm2/state_i0 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 16.352ns
+
+ Path Details: \pwm_generator/period_counter__i11 to \pwm_generator/pwm2/state_i0
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \pwm_generator/period_counter__i11 (from us_clk)
+Route         3   e 1.099                                  \pwm_generator/period_counter[11]
+LUT4        ---     0.448              A to Z              \pwm_generator/i2_2_lut_adj_250
+Route         1   e 0.788                                  \pwm_generator/n7_adj_5176
+LUT4        ---     0.448              A to Z              \pwm_generator/i4_4_lut
+Route         2   e 0.954                                  \pwm_generator/n47352
+LUT4        ---     0.448              C to Z              \pwm_generator/i2_2_lut_3_lut_adj_251
+Route         1   e 0.788                                  \pwm_generator/n7
+LUT4        ---     0.448              A to Z              \pwm_generator/i39689_4_lut
+Route        18   e 1.521                                  next_state_2__N_4443[0]
+LUT4        ---     0.448              B to Z              \pwm_generator/pwm2/i26135_2_lut
+Route         1   e 0.788                                  \pwm_generator/pwm2/n36767
+LUT4        ---     0.448              B to Z              \pwm_generator/pwm2/i39787_4_lut
+Route         1   e 0.788                                  \pwm_generator/pwm2/n5
+                  --------
+                    9.817  (31.5% logic, 68.5% route), 7 logic levels.
+
+
+Passed:  The following path meets requirements by 16.352ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \pwm_generator/period_counter__i11  (from us_clk +)
+   Destination:    FD1S3JX    D              \pwm_generator/pwm4/state_i0  (to us_clk +)
+
+   Delay:                   9.817ns  (31.5% logic, 68.5% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.817ns data_path \pwm_generator/period_counter__i11 to \pwm_generator/pwm4/state_i0 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 16.352ns
+
+ Path Details: \pwm_generator/period_counter__i11 to \pwm_generator/pwm4/state_i0
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \pwm_generator/period_counter__i11 (from us_clk)
+Route         3   e 1.099                                  \pwm_generator/period_counter[11]
+LUT4        ---     0.448              A to Z              \pwm_generator/i2_2_lut_adj_250
+Route         1   e 0.788                                  \pwm_generator/n7_adj_5176
+LUT4        ---     0.448              A to Z              \pwm_generator/i4_4_lut
+Route         2   e 0.954                                  \pwm_generator/n47352
+LUT4        ---     0.448              C to Z              \pwm_generator/i2_2_lut_3_lut_adj_251
+Route         1   e 0.788                                  \pwm_generator/n7
+LUT4        ---     0.448              A to Z              \pwm_generator/i39689_4_lut
+Route        18   e 1.521                                  next_state_2__N_4443[0]
+LUT4        ---     0.448              B to Z              \pwm_generator/pwm4/i26121_2_lut
+Route         1   e 0.788                                  \pwm_generator/pwm4/n36753
+LUT4        ---     0.448              B to Z              \pwm_generator/pwm4/i39749_4_lut
+Route         1   e 0.788                                  \pwm_generator/pwm4/n5
+                  --------
+                    9.817  (31.5% logic, 68.5% route), 7 logic levels.
+
+
+Passed:  The following path meets requirements by 16.352ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \pwm_generator/period_counter__i11  (from us_clk +)
+   Destination:    FD1S3JX    D              \pwm_generator/pwm3/state_i0  (to us_clk +)
+
+   Delay:                   9.817ns  (31.5% logic, 68.5% route), 7 logic levels.
+
+ Constraint Details:
+
+      9.817ns data_path \pwm_generator/period_counter__i11 to \pwm_generator/pwm3/state_i0 meets
+     26.315ns delay constraint less
+      0.146ns L_S requirement (totaling 26.169ns) by 16.352ns
+
+ Path Details: \pwm_generator/period_counter__i11 to \pwm_generator/pwm3/state_i0
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \pwm_generator/period_counter__i11 (from us_clk)
+Route         3   e 1.099                                  \pwm_generator/period_counter[11]
+LUT4        ---     0.448              A to Z              \pwm_generator/i2_2_lut_adj_250
+Route         1   e 0.788                                  \pwm_generator/n7_adj_5176
+LUT4        ---     0.448              A to Z              \pwm_generator/i4_4_lut
+Route         2   e 0.954                                  \pwm_generator/n47352
+LUT4        ---     0.448              C to Z              \pwm_generator/i2_2_lut_3_lut_adj_251
+Route         1   e 0.788                                  \pwm_generator/n7
+LUT4        ---     0.448              A to Z              \pwm_generator/i39689_4_lut
+Route        18   e 1.521                                  next_state_2__N_4443[0]
+LUT4        ---     0.448              B to Z              \pwm_generator/pwm3/i26129_2_lut
+Route         1   e 0.788                                  \pwm_generator/pwm3/n36761
+LUT4        ---     0.448              B to Z              \pwm_generator/pwm3/i39796_4_lut
+Route         1   e 0.788                                  \pwm_generator/pwm3/n5
+                  --------
+                    9.817  (31.5% logic, 68.5% route), 7 logic levels.
+
+Report: 9.963 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 26.315789 -name clk0 [get_nets sys_clk]
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed:  The following path meets requirements by 2.217ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \I2C_Devices/i2c_state__i4  (from sys_clk +)
+   Destination:    FD1S3IX    CD             \I2C_Devices/count_sys_clk_for_ms_i16  (to sys_clk -)
+
+   Delay:                  10.794ns  (23.5% logic, 76.5% route), 6 logic levels.
+
+ Constraint Details:
+
+     10.794ns data_path \I2C_Devices/i2c_state__i4 to \I2C_Devices/count_sys_clk_for_ms_i16 meets
+     13.157ns delay constraint less
+      0.146ns L_S requirement (totaling 13.011ns) by 2.217ns
+
+ Path Details: \I2C_Devices/i2c_state__i4 to \I2C_Devices/count_sys_clk_for_ms_i16
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i2c_state__i4 (from sys_clk)
+Route        95   e 2.108                                  next_i2c_device_driver_state[3]
+LUT4        ---     0.448              D to Z              \I2C_Devices/i23_3_lut_3_lut_4_lut
+Route         1   e 0.788                                  \I2C_Devices/n17_adj_5342
+LUT4        ---     0.448              C to Z              \I2C_Devices/i1_3_lut_4_lut_adj_397
+Route        11   e 1.363                                  \I2C_Devices/n7250
+MOFX0       ---     0.344             C0 to Z              \I2C_Devices/mux_3602_i8
+Route         2   e 0.954                                  \I2C_Devices/clear_waiting_ms_N_893
+LUT4        ---     0.448              C to Z              \I2C_Devices/i2c/i26651_2_lut_3_lut_4_lut
+Route        14   e 1.509                                  \I2C_Devices/clear_waiting_ms
+LUT4        ---     0.448              A to Z              \I2C_Devices/i18385_1_lut_rep_236
+Route        23   e 1.533                                  \I2C_Devices/n52172
+                  --------
+                   10.794  (23.5% logic, 76.5% route), 6 logic levels.
+
+
+Passed:  The following path meets requirements by 2.217ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \I2C_Devices/i2c_state__i4  (from sys_clk +)
+   Destination:    FD1S3JX    PD             \I2C_Devices/count_sys_clk_for_ms_i15  (to sys_clk -)
+
+   Delay:                  10.794ns  (23.5% logic, 76.5% route), 6 logic levels.
+
+ Constraint Details:
+
+     10.794ns data_path \I2C_Devices/i2c_state__i4 to \I2C_Devices/count_sys_clk_for_ms_i15 meets
+     13.157ns delay constraint less
+      0.146ns L_S requirement (totaling 13.011ns) by 2.217ns
+
+ Path Details: \I2C_Devices/i2c_state__i4 to \I2C_Devices/count_sys_clk_for_ms_i15
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i2c_state__i4 (from sys_clk)
+Route        95   e 2.108                                  next_i2c_device_driver_state[3]
+LUT4        ---     0.448              D to Z              \I2C_Devices/i23_3_lut_3_lut_4_lut
+Route         1   e 0.788                                  \I2C_Devices/n17_adj_5342
+LUT4        ---     0.448              C to Z              \I2C_Devices/i1_3_lut_4_lut_adj_397
+Route        11   e 1.363                                  \I2C_Devices/n7250
+MOFX0       ---     0.344             C0 to Z              \I2C_Devices/mux_3602_i8
+Route         2   e 0.954                                  \I2C_Devices/clear_waiting_ms_N_893
+LUT4        ---     0.448              C to Z              \I2C_Devices/i2c/i26651_2_lut_3_lut_4_lut
+Route        14   e 1.509                                  \I2C_Devices/clear_waiting_ms
+LUT4        ---     0.448              A to Z              \I2C_Devices/i18385_1_lut_rep_236
+Route        23   e 1.533                                  \I2C_Devices/n52172
+                  --------
+                   10.794  (23.5% logic, 76.5% route), 6 logic levels.
+
+
+Passed:  The following path meets requirements by 2.217ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1S3IX    CK             \I2C_Devices/i2c_state__i4  (from sys_clk +)
+   Destination:    FD1S3IX    CD             \I2C_Devices/count_sys_clk_for_ms_i14  (to sys_clk -)
+
+   Delay:                  10.794ns  (23.5% logic, 76.5% route), 6 logic levels.
+
+ Constraint Details:
+
+     10.794ns data_path \I2C_Devices/i2c_state__i4 to \I2C_Devices/count_sys_clk_for_ms_i14 meets
+     13.157ns delay constraint less
+      0.146ns L_S requirement (totaling 13.011ns) by 2.217ns
+
+ Path Details: \I2C_Devices/i2c_state__i4 to \I2C_Devices/count_sys_clk_for_ms_i14
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.403             CK to Q              \I2C_Devices/i2c_state__i4 (from sys_clk)
+Route        95   e 2.108                                  next_i2c_device_driver_state[3]
+LUT4        ---     0.448              D to Z              \I2C_Devices/i23_3_lut_3_lut_4_lut
+Route         1   e 0.788                                  \I2C_Devices/n17_adj_5342
+LUT4        ---     0.448              C to Z              \I2C_Devices/i1_3_lut_4_lut_adj_397
+Route        11   e 1.363                                  \I2C_Devices/n7250
+MOFX0       ---     0.344             C0 to Z              \I2C_Devices/mux_3602_i8
+Route         2   e 0.954                                  \I2C_Devices/clear_waiting_ms_N_893
+LUT4        ---     0.448              C to Z              \I2C_Devices/i2c/i26651_2_lut_3_lut_4_lut
+Route        14   e 1.509                                  \I2C_Devices/clear_waiting_ms
+LUT4        ---     0.448              A to Z              \I2C_Devices/i18385_1_lut_rep_236
+Route        23   e 1.533                                  \I2C_Devices/n52172
+                  --------
+                   10.794  (23.5% logic, 76.5% route), 6 logic levels.
+
+Report: 10.940 ns is the maximum delay for this constraint.
+
+
+Timing Report Summary
+--------------
+--------------------------------------------------------------------------------
+Constraint                              |   Constraint|       Actual|Levels
+--------------------------------------------------------------------------------
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk8 [get_nets                          |             |             |
+\ZLV/next_state_4__N_1576]              |            -|            -|     0  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk7 [get_nets                          |             |             |
+\AMC/next_state_4__N_1669]              |            -|            -|     0  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk6 [get_nets                          |             |             |
+\AMC/next_complete_signal_N_1862]       |            -|            -|     0  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk5 [get_nets                          |             |             |
+\AMC/next_auto_state_8__N_1765]         |            -|            -|     0  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk4 [get_nets                          |             |             |
+\I2C_Devices/i2c/data_latch]            |    26.315 ns|     5.952 ns|     4  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk3 [get_nets                          |             |             |
+\I2C_Devices/next_addr_7__N_1168]       |    26.315 ns|     7.326 ns|     5  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk2 [get_nets                          |             |             |
+\I2C_Devices/i2c/next_ack_flag_N_1498]  |            -|            -|     0  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk1 [get_nets us_clk]                  |    26.315 ns|     9.963 ns|     7  
+                                        |             |             |
+create_clock -period 26.315789 -name    |             |             |
+clk0 [get_nets sys_clk]                 |    26.315 ns|    21.880 ns|     6  
+                                        |             |             |
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0
+
+Constraints cover  78370 paths, 3559 nets, and 10317 connections (87.0% coverage)
+
+
+Peak memory: 235241472 bytes, TRCE: 0 bytes, DLYMAN: 0 bytes
+CPU_TIME_REPORT: 0 secs 

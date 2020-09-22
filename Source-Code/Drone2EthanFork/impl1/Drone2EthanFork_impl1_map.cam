@@ -1,0 +1,168 @@
+[ START MERGED ]
+resetn_derived_2 resetn
+TC/n20 TC/state_4_adj_5373
+TC/n39700 state_2_adj_5376
+TC/next_state_6_N_1980_1 TC/next_state_6_N_1980_2
+sys_clk_N_413 sys_clk
+I2C_Devices/n52172 I2C_Devices/clear_waiting_ms
+I2C_Devices/n52421 next_i2c_device_driver_state_0
+I2C_Devices/i2c/n52432 i2c_top_debug_3
+I2C_Devices/n30677 I2C_Devices/count_ms_15
+AMC/n17 state_3
+AMC/n14 state_2
+AMC/start_flag_N_1875 next_state_4_N_1656_2
+ZLV/start_signal_N_1872 next_state_4_N_1567_2
+uart/n52378 uart/tx_word_index_2
+uart/n52442 uart/tx_byte_index_2
+uart/uart_core_inst/u_txmitt/n52544 uart/uart_core_inst/u_txmitt/n21_adj_5099
+uart/uart_core_inst/u_txmitt/n52547 uart/uart_core_inst/u_txmitt/n23
+uart/uart_core_inst/u_txmitt/n52550 uart/uart_core_inst/u_txmitt/n25
+uart/uart_core_inst/u_txmitt/n52553 uart/uart_core_inst/u_txmitt/n26
+uart/uart_core_inst/u_txmitt/n52556 uart/uart_core_inst/u_txmitt/n27
+uart/uart_core_inst/u_txmitt/n52559 uart/uart_core_inst/u_txmitt/n28
+uart/uart_core_inst/u_txmitt/n52589 uart/uart_core_inst/u_txmitt/n22
+uart/uart_core_inst/u_txmitt/n52601 uart/uart_core_inst/u_txmitt/n20
+[ END MERGED ]
+[ START CLIPPED ]
+GND_net
+n53884
+uart/uart_core_inst/u_rxcver/counter_15__I_0_15/S1
+uart/uart_core_inst/u_rxcver/counter_15__I_0_15/S0
+uart/uart_core_inst/u_rxcver/counter_15__I_0_16/S0
+uart/uart_core_inst/u_rxcver/counter_15__I_0_16/CO
+uart/uart_core_inst/u_rxcver/counter_15__I_0_0/S1
+uart/uart_core_inst/u_rxcver/counter_15__I_0_0/S0
+uart/uart_core_inst/u_rxcver/counter_15__I_0_0/CI
+uart/uart_core_inst/u_rxcver/counter_15__I_0_13/S1
+uart/uart_core_inst/u_rxcver/counter_15__I_0_13/S0
+uart/uart_core_inst/u_rxcver/counter_6620_add_4_1/S0
+uart/uart_core_inst/u_rxcver/counter_6620_add_4_1/CI
+uart/uart_core_inst/u_rxcver/counter_6620_add_4_17/S1
+uart/uart_core_inst/u_rxcver/counter_6620_add_4_17/CO
+uart/uart_core_inst/u_txmitt/sub_10_add_2_1/S0
+uart/uart_core_inst/u_txmitt/sub_10_add_2_1/CI
+uart/uart_core_inst/u_txmitt/sub_10_add_2_17/S1
+uart/uart_core_inst/u_txmitt/sub_10_add_2_17/CO
+uart/tx_word_index_6624_add_4_1/S0
+uart/tx_word_index_6624_add_4_1/CI
+uart/tx_word_index_6624_add_4_9/S1
+uart/tx_word_index_6624_add_4_9/CO
+pwm_generator/add_7_1/S0
+pwm_generator/add_7_1/CI
+pwm_generator/add_7_17/S1
+pwm_generator/add_7_17/CO
+pwm_generator/add_8_2/S0
+pwm_generator/add_8_2/CI
+pwm_generator/add_8_10/CO
+AMC/sub_8_add_2_29/S1
+AMC/sub_8_add_2_29/CO
+AMC/sub_8_add_2_1/S0
+AMC/sub_8_add_2_1/CI
+ZLV/sub_50_add_2_1/S0
+ZLV/sub_50_add_2_1/CI
+ZLV/sub_50_add_2_15/CO
+ZLV/add_11128_2/S0
+ZLV/add_11128_2/CI
+ZLV/add_11128_12/S1
+ZLV/add_11128_12/CO
+ZLV/add_11137_2/S0
+ZLV/add_11137_2/CI
+ZLV/add_11137_12/CO
+I2C_Devices/i2c/sub_31_add_2_1/S0
+I2C_Devices/i2c/sub_31_add_2_1/CI
+I2C_Devices/i2c/sub_31_add_2_33/S1
+I2C_Devices/i2c/sub_31_add_2_33/CO
+I2C_Devices/i2c/sub_10_add_2_1/S0
+I2C_Devices/i2c/sub_10_add_2_1/CI
+I2C_Devices/i2c/sub_10_add_2_13/S1
+I2C_Devices/i2c/sub_10_add_2_13/CO
+I2C_Devices/add_3739_17/CO
+I2C_Devices/sub_257_add_2_1/S0
+I2C_Devices/sub_257_add_2_1/CI
+I2C_Devices/sub_257_add_2_21/CO
+I2C_Devices/add_409_1/S0
+I2C_Devices/add_409_1/CI
+I2C_Devices/sub_10_add_2_2/S0
+I2C_Devices/sub_10_add_2_2/CI
+I2C_Devices/add_8527_2/S0
+I2C_Devices/add_8527_2/CI
+I2C_Devices/add_8527_18/CO
+I2C_Devices/add_8268_2/S0
+I2C_Devices/add_8268_2/CI
+I2C_Devices/sub_10_add_2_16/CO
+I2C_Devices/add_8268_cout/S1
+I2C_Devices/add_8268_cout/CO
+I2C_Devices/add_8435_2/S0
+I2C_Devices/add_8435_2/CI
+I2C_Devices/add_8435_22/CO
+I2C_Devices/add_7877_add_1_2/S0
+I2C_Devices/add_7877_add_1_2/CI
+I2C_Devices/add_409_9/S1
+I2C_Devices/add_409_9/CO
+I2C_Devices/add_7877_add_1_cout/S1
+I2C_Devices/add_7877_add_1_cout/CO
+I2C_Devices/add_3739_1/S0
+I2C_Devices/add_3739_1/CI
+receiver/pitch_reader/add_3755_1/S0
+receiver/pitch_reader/add_3755_1/CI
+receiver/pitch_reader/add_3755_17/S1
+receiver/pitch_reader/add_3755_17/CO
+receiver/roll_reader/add_3751_1/S0
+receiver/roll_reader/add_3751_1/CI
+receiver/roll_reader/add_3751_17/S1
+receiver/roll_reader/add_3751_17/CO
+receiver/swa_swb_reader/add_3759_1/S0
+receiver/swa_swb_reader/add_3759_1/CI
+receiver/swa_swb_reader/add_3759_17/S1
+receiver/swa_swb_reader/add_3759_17/CO
+receiver/throttle_reader/add_3763_1/S0
+receiver/throttle_reader/add_3763_1/CI
+receiver/throttle_reader/add_3763_17/S1
+receiver/throttle_reader/add_3763_17/CO
+receiver/yaw_reader/add_3747_1/S0
+receiver/yaw_reader/add_3747_1/CI
+receiver/yaw_reader/add_3747_17/S1
+receiver/yaw_reader/add_3747_17/CO
+us_clk_divider/add_7_15/CO
+us_clk_divider/add_7_1/S0
+us_clk_divider/add_7_1/CI
+[ END CLIPPED ]
+[ START OSC ]
+sys_clk 38.00
+[ END OSC ]
+[ START DESIGN PREFS ]
+SCHEMATIC START ;
+# map:  version Diamond (64-bit) 3.11.2.446 -- WARNING: Map write only section -- Sun Sep 13 15:51:03 2020
+
+SYSCONFIG SDM_PORT=DISABLE SLAVE_SPI_PORT=DISABLE I2C_PORT=ENABLE MASTER_SPI_PORT=DISABLE COMPRESS_CONFIG=ON CONFIGURATION=CFG MY_ASSP=OFF ONE_TIME_PROGRAM=OFF CONFIG_SECURE=OFF MCCLK_FREQ=2.08 JTAG_PORT=ENABLE ENABLE_TRANSFR=DISABLE SHAREDEBRINIT=DISABLE MUX_CONFIGURATION_PORTS=DISABLE DUALBOOTGOLDEN=INTERNAL BACKGROUND_RECONFIG=OFF INBUF=ON ;
+LOCATE COMP "sout" SITE "J14" ;
+LOCATE COMP "led_data_out[4]" SITE "L12" ;
+LOCATE COMP "led_data_out[5]" SITE "J11" ;
+LOCATE COMP "led_data_out[6]" SITE "J13" ;
+LOCATE COMP "sda_2" SITE "F14" ;
+LOCATE COMP "scl_2" SITE "B16" ;
+LOCATE COMP "sda_1" SITE "C9" ;
+LOCATE COMP "scl_1" SITE "A9" ;
+LOCATE COMP "rxrdy_n" SITE "G13" ;
+LOCATE COMP "led_data_out[7]" SITE "H11" ;
+LOCATE COMP "sin" SITE "K16" ;
+LOCATE COMP "machxo3_switch_reset_n" SITE "N1" ;
+LOCATE COMP "swa_swb_pwm" SITE "B6" ;
+LOCATE COMP "pitch_pwm" SITE "A10" ;
+LOCATE COMP "roll_pwm" SITE "D9" ;
+LOCATE COMP "yaw_pwm" SITE "B9" ;
+LOCATE COMP "throttle_pwm" SITE "F7" ;
+LOCATE COMP "resetn_lidar" SITE "L15" ;
+LOCATE COMP "resetn_imu" SITE "E14" ;
+LOCATE COMP "motor_4_pwm" SITE "E10" ;
+LOCATE COMP "motor_3_pwm" SITE "B4" ;
+LOCATE COMP "motor_2_pwm" SITE "R6" ;
+LOCATE COMP "motor_1_pwm" SITE "P10" ;
+LOCATE COMP "txrdy_n" SITE "G14" ;
+LOCATE COMP "led_data_out[0]" SITE "P16" ;
+LOCATE COMP "led_data_out[1]" SITE "N15" ;
+LOCATE COMP "led_data_out[2]" SITE "L13" ;
+LOCATE COMP "led_data_out[3]" SITE "K11" ;
+FREQUENCY NET "sys_clk" 38.000000 MHz ;
+SCHEMATIC END ;
+[ END DESIGN PREFS ]

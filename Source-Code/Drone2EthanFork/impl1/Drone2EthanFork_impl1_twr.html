@@ -1,0 +1,2133 @@
+<HTML>
+<HEAD><TITLE>Lattice TRACE Report</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Par_Twr"></A><B><U><big>Place & Route TRACE Report</big></U></B>
+
+Loading design for application trce from file drone2ethanfork_impl1.ncd.
+Design name: drone2
+NCD version: 3.3
+Vendor:      LATTICE
+Device:      LCMXO3LF-6900C
+Package:     CABGA256
+Performance: 5
+Loading device for application trce from file 'xo3c6900.nph' in environment: C:/lscc/diamond/3.11_x64/ispfpga.
+Package Status:                     Final          Version 1.16.
+Performance Hardware Data Status:   Final          Version 37.4.
+Setup and Hold Report
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_setup"></A><B><U><big>Lattice TRACE Report - Setup, Version Diamond (64-bit) 3.11.2.446</big></U></B>
+Sun Sep 13 15:51:51 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_set_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o Drone2EthanFork_impl1.twr -gui -msgset C:/Users/mintbox/Documents/LatticeDiamondProjects/Ethans-Fork-Drone2-Capstone/Drone2_LS_Capstone/Source-Code/Drone2EthanFork/promote.xml Drone2EthanFork_impl1.ncd Drone2EthanFork_impl1.prf 
+Design file:     drone2ethanfork_impl1.ncd
+Preference file: drone2ethanfork_impl1.prf
+Device,speed:    LCMXO3LF-6900C,5
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_set_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#par_twr_pref_0_0' Target='right'>FREQUENCY NET "sys_clk" 38.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
+Report:   42.589MHz is the maximum frequency for this preference.
+
+51 potential circuit loops found in timing analysis.
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+BLOCK JTAG PATHS
+--------------------------------------------------------------------------------
+
+
+Derating parameters
+-------------------
+Voltage:    3.300 V
+
+VCCIO Voltage:
+                   3.300 V (Bank 0, defined by PAR)
+                   3.300 V (Bank 1, defined by PAR)
+                   3.300 V (Bank 2, defined by PAR)
+                   3.300 V (Bank 3, defined by PAR)
+                   3.300 V (Bank 4)
+                   3.300 V (Bank 5)
+
+
+
+================================================================================
+<A name="par_twr_pref_0_0"></A>Preference: FREQUENCY NET "sys_clk" 38.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 2.836ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i1  (to sys_clk +)
+
+   Delay:              10.062ns  (41.9% logic, 58.1% route), 9 logic levels.
+
+ Constraint Details:
+
+     10.062ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 2.836ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     0.872     R11C19A.F1 to      R8C19A.D0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19A.D0 to      R8C19A.F0 I2C_Devices/i2c/SLICE_1229
+ROUTE         3     0.587      R8C19A.F0 to      R8C19A.A1 I2C_Devices/i2c/n52286
+CTOF_DEL    ---     0.452      R8C19A.A1 to      R8C19A.F1 I2C_Devices/i2c/SLICE_1229
+ROUTE         2     0.893      R8C19A.F1 to      R8C19D.B1 I2C_Devices/i2c/n52192
+CTOF_DEL    ---     0.452      R8C19D.B1 to      R8C19D.F1 I2C_Devices/i2c/SLICE_1234
+ROUTE         2     0.571      R8C19D.F1 to      R8C20C.D0 I2C_Devices/i2c/n7628
+CTOF_DEL    ---     0.452      R8C20C.D0 to      R8C20C.F0 I2C_Devices/i2c/SLICE_1226
+ROUTE         1     1.393      R8C20C.F0 to      R7C16C.D1 I2C_Devices/i2c/n12360
+CTOOFX_DEL  ---     0.661      R7C16C.D1 to    R7C16C.OFX0 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.000    R7C16C.OFX0 to     R7C16C.FXB I2C_Devices/i2c/n49506
+FXTOOFX_DE  ---     0.223     R7C16C.FXB to    R7C16C.OFX1 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.678    R7C16C.OFX1 to      R8C16C.C0 I2C_Devices/i2c/n49460
+CTOOFX_DEL  ---     0.661      R8C16C.C0 to    R8C16C.OFX0 I2C_Devices/i2c/SLICE_638
+ROUTE         1     0.000    R8C16C.OFX0 to     R8C16C.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_0 (to sys_clk)
+                  --------
+                   10.062   (41.9% logic, 58.1% route), 9 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R8C16C.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.051ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i1  (to sys_clk +)
+
+   Delay:               9.847ns  (42.8% logic, 57.2% route), 9 logic levels.
+
+ Constraint Details:
+
+      9.847ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 3.051ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     0.872     R11C19A.F1 to      R8C19A.D0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19A.D0 to      R8C19A.F0 I2C_Devices/i2c/SLICE_1229
+ROUTE         3     0.678      R8C19A.F0 to      R8C20A.C0 I2C_Devices/i2c/n52286
+CTOF_DEL    ---     0.452      R8C20A.C0 to      R8C20A.F0 I2C_Devices/i2c/SLICE_342
+ROUTE         2     0.587      R8C20A.F0 to      R8C19D.A1 I2C_Devices/i2c/byte_rd_left_5_N_1248_4
+CTOF_DEL    ---     0.452      R8C19D.A1 to      R8C19D.F1 I2C_Devices/i2c/SLICE_1234
+ROUTE         2     0.571      R8C19D.F1 to      R8C20C.D0 I2C_Devices/i2c/n7628
+CTOF_DEL    ---     0.452      R8C20C.D0 to      R8C20C.F0 I2C_Devices/i2c/SLICE_1226
+ROUTE         1     1.393      R8C20C.F0 to      R7C16C.D1 I2C_Devices/i2c/n12360
+CTOOFX_DEL  ---     0.661      R7C16C.D1 to    R7C16C.OFX0 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.000    R7C16C.OFX0 to     R7C16C.FXB I2C_Devices/i2c/n49506
+FXTOOFX_DE  ---     0.223     R7C16C.FXB to    R7C16C.OFX1 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.678    R7C16C.OFX1 to      R8C16C.C0 I2C_Devices/i2c/n49460
+CTOOFX_DEL  ---     0.661      R8C16C.C0 to    R8C16C.OFX0 I2C_Devices/i2c/SLICE_638
+ROUTE         1     0.000    R8C16C.OFX0 to     R8C16C.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_0 (to sys_clk)
+                  --------
+                    9.847   (42.8% logic, 57.2% route), 9 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R8C16C.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.339ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i2  (to sys_clk +)
+
+   Delay:               9.559ns  (43.9% logic, 56.1% route), 8 logic levels.
+
+ Constraint Details:
+
+      9.559ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 3.339ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     0.872     R11C19A.F1 to      R8C19A.D0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19A.D0 to      R8C19A.F0 I2C_Devices/i2c/SLICE_1229
+ROUTE         3     0.587      R8C19A.F0 to      R8C19A.A1 I2C_Devices/i2c/n52286
+CTOF_DEL    ---     0.452      R8C19A.A1 to      R8C19A.F1 I2C_Devices/i2c/SLICE_1229
+ROUTE         2     0.893      R8C19A.F1 to      R8C19D.B1 I2C_Devices/i2c/n52192
+CTOF_DEL    ---     0.452      R8C19D.B1 to      R8C19D.F1 I2C_Devices/i2c/SLICE_1234
+ROUTE         2     0.950      R8C19D.F1 to      R7C17A.D1 I2C_Devices/i2c/n7628
+CTOOFX_DEL  ---     0.661      R7C17A.D1 to    R7C17A.OFX0 I2C_Devices/i2c/i41683/SLICE_963
+ROUTE         1     0.544    R7C17A.OFX0 to      R7C17C.D1 I2C_Devices/i2c/n53883
+CTOOFX_DEL  ---     0.661      R7C17C.D1 to    R7C17C.OFX0 I2C_Devices/i2c/i41278/SLICE_977
+ROUTE         1     0.659    R7C17C.OFX0 to      R7C17D.C1 I2C_Devices/i2c/n53172
+CTOOFX_DEL  ---     0.661      R7C17D.C1 to    R7C17D.OFX0 I2C_Devices/i2c/SLICE_639
+ROUTE         1     0.000    R7C17D.OFX0 to     R7C17D.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_1 (to sys_clk)
+                  --------
+                    9.559   (43.9% logic, 56.1% route), 8 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R7C17D.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.554ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i2  (to sys_clk +)
+
+   Delay:               9.344ns  (44.9% logic, 55.1% route), 8 logic levels.
+
+ Constraint Details:
+
+      9.344ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 3.554ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     0.872     R11C19A.F1 to      R8C19A.D0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19A.D0 to      R8C19A.F0 I2C_Devices/i2c/SLICE_1229
+ROUTE         3     0.678      R8C19A.F0 to      R8C20A.C0 I2C_Devices/i2c/n52286
+CTOF_DEL    ---     0.452      R8C20A.C0 to      R8C20A.F0 I2C_Devices/i2c/SLICE_342
+ROUTE         2     0.587      R8C20A.F0 to      R8C19D.A1 I2C_Devices/i2c/byte_rd_left_5_N_1248_4
+CTOF_DEL    ---     0.452      R8C19D.A1 to      R8C19D.F1 I2C_Devices/i2c/SLICE_1234
+ROUTE         2     0.950      R8C19D.F1 to      R7C17A.D1 I2C_Devices/i2c/n7628
+CTOOFX_DEL  ---     0.661      R7C17A.D1 to    R7C17A.OFX0 I2C_Devices/i2c/i41683/SLICE_963
+ROUTE         1     0.544    R7C17A.OFX0 to      R7C17C.D1 I2C_Devices/i2c/n53883
+CTOOFX_DEL  ---     0.661      R7C17C.D1 to    R7C17C.OFX0 I2C_Devices/i2c/i41278/SLICE_977
+ROUTE         1     0.659    R7C17C.OFX0 to      R7C17D.C1 I2C_Devices/i2c/n53172
+CTOOFX_DEL  ---     0.661      R7C17D.C1 to    R7C17D.OFX0 I2C_Devices/i2c/SLICE_639
+ROUTE         1     0.000    R7C17D.OFX0 to     R7C17D.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_1 (to sys_clk)
+                  --------
+                    9.344   (44.9% logic, 55.1% route), 8 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R7C17D.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.929ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i1  (to sys_clk +)
+
+   Delay:               8.969ns  (41.9% logic, 58.1% route), 8 logic levels.
+
+ Constraint Details:
+
+      8.969ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 3.929ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     0.987     R11C19A.F1 to      R8C19B.C1 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19B.C1 to      R8C19B.F1 I2C_Devices/i2c/SLICE_379
+ROUTE         2     0.911      R8C19B.F1 to      R8C20C.B1 I2C_Devices/i2c/n52239
+CTOF_DEL    ---     0.452      R8C20C.B1 to      R8C20C.F1 I2C_Devices/i2c/SLICE_1226
+ROUTE         1     0.384      R8C20C.F1 to      R8C20C.C0 I2C_Devices/i2c/n52175
+CTOF_DEL    ---     0.452      R8C20C.C0 to      R8C20C.F0 I2C_Devices/i2c/SLICE_1226
+ROUTE         1     1.393      R8C20C.F0 to      R7C16C.D1 I2C_Devices/i2c/n12360
+CTOOFX_DEL  ---     0.661      R7C16C.D1 to    R7C16C.OFX0 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.000    R7C16C.OFX0 to     R7C16C.FXB I2C_Devices/i2c/n49506
+FXTOOFX_DE  ---     0.223     R7C16C.FXB to    R7C16C.OFX1 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.678    R7C16C.OFX1 to      R8C16C.C0 I2C_Devices/i2c/n49460
+CTOOFX_DEL  ---     0.661      R8C16C.C0 to    R8C16C.OFX0 I2C_Devices/i2c/SLICE_638
+ROUTE         1     0.000    R8C16C.OFX0 to     R8C16C.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_0 (to sys_clk)
+                  --------
+                    8.969   (41.9% logic, 58.1% route), 8 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R8C16C.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 3.995ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i1  (to sys_clk +)
+
+   Delay:               8.903ns  (42.5% logic, 57.5% route), 8 logic levels.
+
+ Constraint Details:
+
+      8.903ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 3.995ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     0.872     R11C19A.F1 to      R8C19A.D0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19A.D0 to      R8C19A.F0 I2C_Devices/i2c/SLICE_1229
+ROUTE         3     0.873      R8C19A.F0 to      R8C20B.A0 I2C_Devices/i2c/n52286
+CTOF_DEL    ---     0.452      R8C20B.A0 to      R8C20B.F0 I2C_Devices/i2c/SLICE_1245
+ROUTE         3     0.399      R8C20B.F0 to      R8C20B.C1 I2C_Devices/i2c/next_data_latch_N_1505
+CTOF_DEL    ---     0.452      R8C20B.C1 to      R8C20B.F1 I2C_Devices/i2c/SLICE_1245
+ROUTE         1     1.355      R8C20B.F1 to      R8C16D.B1 I2C_Devices/i2c/n12370
+CTOF_DEL    ---     0.452      R8C16D.B1 to      R8C16D.F1 I2C_Devices/i2c/SLICE_1244
+ROUTE         1     0.384      R8C16D.F1 to      R8C16D.C0 I2C_Devices/i2c/n4_adj_5222
+CTOF_DEL    ---     0.452      R8C16D.C0 to      R8C16D.F0 I2C_Devices/i2c/SLICE_1244
+ROUTE         1     0.384      R8C16D.F0 to      R8C16C.C1 I2C_Devices/i2c/n49518
+CTOOFX_DEL  ---     0.661      R8C16C.C1 to    R8C16C.OFX0 I2C_Devices/i2c/SLICE_638
+ROUTE         1     0.000    R8C16C.OFX0 to     R8C16C.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_0 (to sys_clk)
+                  --------
+                    8.903   (42.5% logic, 57.5% route), 8 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R8C16C.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 4.024ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i2  (to sys_clk +)
+
+   Delay:               8.874ns  (39.9% logic, 60.1% route), 7 logic levels.
+
+ Constraint Details:
+
+      8.874ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 4.024ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     0.872     R11C19A.F1 to      R8C19A.D0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19A.D0 to      R8C19A.F0 I2C_Devices/i2c/SLICE_1229
+ROUTE         3     0.873      R8C19A.F0 to      R8C20B.A0 I2C_Devices/i2c/n52286
+CTOF_DEL    ---     0.452      R8C20B.A0 to      R8C20B.F0 I2C_Devices/i2c/SLICE_1245
+ROUTE         3     0.969      R8C20B.F0 to      R8C17A.C0 I2C_Devices/i2c/next_data_latch_N_1505
+CTOF_DEL    ---     0.452      R8C17A.C0 to      R8C17A.F0 I2C_Devices/i2c/SLICE_1227
+ROUTE         1     0.882      R8C17A.F0 to      R7C17B.B1 I2C_Devices/i2c/n32
+CTOOFX_DEL  ---     0.661      R7C17B.B1 to    R7C17B.OFX0 I2C_Devices/i2c/i41281/SLICE_975
+ROUTE         1     0.885    R7C17B.OFX0 to      R7C17D.B0 I2C_Devices/i2c/n53177
+CTOOFX_DEL  ---     0.661      R7C17D.B0 to    R7C17D.OFX0 I2C_Devices/i2c/SLICE_639
+ROUTE         1     0.000    R7C17D.OFX0 to     R7C17D.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_1 (to sys_clk)
+                  --------
+                    8.874   (39.9% logic, 60.1% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R7C17D.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 4.074ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i1  (to sys_clk +)
+
+   Delay:               8.824ns  (42.6% logic, 57.4% route), 8 logic levels.
+
+ Constraint Details:
+
+      8.824ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 4.074ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     1.182     R11C19A.F1 to      R8C19D.A0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19D.A0 to      R8C19D.F0 I2C_Devices/i2c/SLICE_1234
+ROUTE         1     0.384      R8C19D.F0 to      R8C19D.C1 I2C_Devices/i2c/n10_adj_5212
+CTOF_DEL    ---     0.452      R8C19D.C1 to      R8C19D.F1 I2C_Devices/i2c/SLICE_1234
+ROUTE         2     0.571      R8C19D.F1 to      R8C20C.D0 I2C_Devices/i2c/n7628
+CTOF_DEL    ---     0.452      R8C20C.D0 to      R8C20C.F0 I2C_Devices/i2c/SLICE_1226
+ROUTE         1     1.393      R8C20C.F0 to      R7C16C.D1 I2C_Devices/i2c/n12360
+CTOOFX_DEL  ---     0.661      R7C16C.D1 to    R7C16C.OFX0 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.000    R7C16C.OFX0 to     R7C16C.FXB I2C_Devices/i2c/n49506
+FXTOOFX_DE  ---     0.223     R7C16C.FXB to    R7C16C.OFX1 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.678    R7C16C.OFX1 to      R8C16C.C0 I2C_Devices/i2c/n49460
+CTOOFX_DEL  ---     0.661      R8C16C.C0 to    R8C16C.OFX0 I2C_Devices/i2c/SLICE_638
+ROUTE         1     0.000    R8C16C.OFX0 to     R8C16C.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_0 (to sys_clk)
+                  --------
+                    8.824   (42.6% logic, 57.4% route), 8 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R8C16C.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 4.474ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19949  (from I2C_Devices/i2c/byte_rd_left_5__N_1266 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i1  (to sys_clk +)
+
+   Delay:               8.756ns  (43.0% logic, 57.0% route), 8 logic levels.
+
+ Constraint Details:
+
+      8.756ns physical path delay I2C_Devices/i2c/SLICE_378 to I2C_Devices/i2c/SLICE_638 meets
+     26.316ns delay constraint less
+     12.936ns skew and
+      0.150ns DIN_SET requirement (totaling 13.230ns) by 4.474ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_378 to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409     R9C19C.CLK to      R9C19C.Q0 I2C_Devices/i2c/SLICE_378 (from I2C_Devices/i2c/byte_rd_left_5__N_1266)
+ROUTE         3     0.872      R9C19C.Q0 to      R8C19A.A0 I2C_Devices/i2c/n30621
+CTOF_DEL    ---     0.452      R8C19A.A0 to      R8C19A.F0 I2C_Devices/i2c/SLICE_1229
+ROUTE         3     0.587      R8C19A.F0 to      R8C19A.A1 I2C_Devices/i2c/n52286
+CTOF_DEL    ---     0.452      R8C19A.A1 to      R8C19A.F1 I2C_Devices/i2c/SLICE_1229
+ROUTE         2     0.893      R8C19A.F1 to      R8C19D.B1 I2C_Devices/i2c/n52192
+CTOF_DEL    ---     0.452      R8C19D.B1 to      R8C19D.F1 I2C_Devices/i2c/SLICE_1234
+ROUTE         2     0.571      R8C19D.F1 to      R8C20C.D0 I2C_Devices/i2c/n7628
+CTOF_DEL    ---     0.452      R8C20C.D0 to      R8C20C.F0 I2C_Devices/i2c/SLICE_1226
+ROUTE         1     1.393      R8C20C.F0 to      R7C16C.D1 I2C_Devices/i2c/n12360
+CTOOFX_DEL  ---     0.661      R7C16C.D1 to    R7C16C.OFX0 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.000    R7C16C.OFX0 to     R7C16C.FXB I2C_Devices/i2c/n49506
+FXTOOFX_DE  ---     0.223     R7C16C.FXB to    R7C16C.OFX1 I2C_Devices/i2c/i38711/SLICE_964
+ROUTE         1     0.678    R7C16C.OFX1 to      R8C16C.C0 I2C_Devices/i2c/n49460
+CTOOFX_DEL  ---     0.661      R8C16C.C0 to    R8C16C.OFX0 I2C_Devices/i2c/SLICE_638
+ROUTE         1     0.000    R8C16C.OFX0 to     R8C16C.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_0 (to sys_clk)
+                  --------
+                    8.756   (43.0% logic, 57.0% route), 8 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_378:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.707     R11C18D.F0 to      R9C18D.C0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452      R9C18D.C0 to      R9C18D.F0 I2C_Devices/i2c/SLICE_1451
+ROUTE         2     0.917      R9C18D.F0 to     R9C19C.CLK I2C_Devices/i2c/byte_rd_left_5__N_1266
+                  --------
+                   16.701   (26.4% logic, 73.6% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_638:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R8C16C.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 4.577ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/i19953  (from I2C_Devices/i2c/byte_rd_left_5__N_1265 +)
+   Destination:    FF         Data in        I2C_Devices/i2c/i2c_cmd_state__i2  (to sys_clk +)
+
+   Delay:               8.321ns  (45.0% logic, 55.0% route), 7 logic levels.
+
+ Constraint Details:
+
+      8.321ns physical path delay I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639 meets
+     26.316ns delay constraint less
+     13.268ns skew and
+      0.150ns DIN_SET requirement (totaling 12.898ns) by 4.577ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_381 to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.409    R11C19B.CLK to     R11C19B.Q0 I2C_Devices/i2c/SLICE_381 (from I2C_Devices/i2c/byte_rd_left_5__N_1265)
+ROUTE         1     0.854     R11C19B.Q0 to     R11C19A.A1 I2C_Devices/i2c/n30625
+CTOF_DEL    ---     0.452     R11C19A.A1 to     R11C19A.F1 I2C_Devices/i2c/SLICE_382
+ROUTE         6     1.182     R11C19A.F1 to      R8C19D.A0 I2C_Devices/i2c/byte_rd_left_1
+CTOF_DEL    ---     0.452      R8C19D.A0 to      R8C19D.F0 I2C_Devices/i2c/SLICE_1234
+ROUTE         1     0.384      R8C19D.F0 to      R8C19D.C1 I2C_Devices/i2c/n10_adj_5212
+CTOF_DEL    ---     0.452      R8C19D.C1 to      R8C19D.F1 I2C_Devices/i2c/SLICE_1234
+ROUTE         2     0.950      R8C19D.F1 to      R7C17A.D1 I2C_Devices/i2c/n7628
+CTOOFX_DEL  ---     0.661      R7C17A.D1 to    R7C17A.OFX0 I2C_Devices/i2c/i41683/SLICE_963
+ROUTE         1     0.544    R7C17A.OFX0 to      R7C17C.D1 I2C_Devices/i2c/n53883
+CTOOFX_DEL  ---     0.661      R7C17C.D1 to    R7C17C.OFX0 I2C_Devices/i2c/i41278/SLICE_977
+ROUTE         1     0.659    R7C17C.OFX0 to      R7C17D.C1 I2C_Devices/i2c/n53172
+CTOOFX_DEL  ---     0.661      R7C17D.C1 to    R7C17D.OFX0 I2C_Devices/i2c/SLICE_639
+ROUTE         1     0.000    R7C17D.OFX0 to     R7C17D.DI0 I2C_Devices/i2c/next_i2c_cmd_state_5_N_1479_1 (to sys_clk)
+                  --------
+                    8.321   (45.0% logic, 55.0% route), 7 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_381:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.918        OSC.OSC to     EFB.WBCLKI sys_clk
+WCLKI2WBAC  ---     2.155     EFB.WBCLKI to     EFB.WBACKO I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0
+ROUTE        46     3.681     EFB.WBACKO to     R10C18B.B0 I2C_Devices/i2c/ack
+CTOF_DEL    ---     0.452     R10C18B.B0 to     R10C18B.F0 I2C_Devices/i2c/SLICE_1353
+ROUTE         1     0.954     R10C18B.F0 to      R9C17A.C1 I2C_Devices/i2c/n38161
+CTOF_DEL    ---     0.452      R9C17A.C1 to      R9C17A.F1 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     0.610      R9C17A.F1 to      R9C17A.B0 I2C_Devices/i2c/n15
+CTOF_DEL    ---     0.452      R9C17A.B0 to      R9C17A.F0 I2C_Devices/i2c/SLICE_1228
+ROUTE         1     1.499      R9C17A.F0 to     R11C18D.A0 n52142
+CTOF_DEL    ---     0.452     R11C18D.A0 to     R11C18D.F0 SLICE_1167
+ROUTE         6     0.925     R11C18D.F0 to     R14C18B.D0 byte_rd_left_5__N_1255
+CTOF_DEL    ---     0.452     R14C18B.D0 to     R14C18B.F0 SLICE_1548
+ROUTE         2     1.031     R14C18B.F0 to    R11C19B.CLK I2C_Devices/i2c/byte_rd_left_5__N_1265
+                  --------
+                   17.033   (25.9% logic, 74.1% route), 6 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_639:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     3.765        OSC.OSC to     R7C17D.CLK sys_clk
+                  --------
+                    3.765   (0.0% logic, 100.0% route), 0 logic levels.
+
+Report:   42.589MHz is the maximum frequency for this preference.
+
+<A name="ptwr_set_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference                              |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "sys_clk" 38.000000 MHz ; |   38.000 MHz|   42.589 MHz|   9  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="ptwr_set_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 67 clocks:
+
+Clock Domain: us_clk   Source: us_clk_divider/SLICE_886.Q0   Loads: 202
+   No transfer within this clock domain is found
+
+Clock Domain: sys_clk   Source: OSCH_inst.OSC   Loads: 436
+   Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: us_clk   Source: us_clk_divider/SLICE_886.Q0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 66
+
+   Clock Domain: resetn   Source: SLICE_1363.Q0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: ZLV/next_state_4__N_1576   Source: ZLV/i40920/SLICE_981.OFX0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 5
+
+   Clock Domain: I2C_Devices/i2c/next_addr_7__N_1168   Source: I2C_Devices/SLICE_1202.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 13
+
+   Clock Domain: I2C_Devices/i2c/next_ack_flag_N_1498   Source: I2C_Devices/i2c/SLICE_1223.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/i2c/data_latch   Source: I2C_Devices/i2c/SLICE_358.Q0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 8
+
+   Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1266   Source: I2C_Devices/i2c/SLICE_1451.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1265   Source: SLICE_1548.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_445   Source: SLICE_1200.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_442   Source: I2C_Devices/SLICE_1349.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_439   Source: I2C_Devices/SLICE_1430.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__7__N_473   Source: I2C_Devices/SLICE_1378.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__6__N_480   Source: I2C_Devices/SLICE_1487.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__5__N_486   Source: I2C_Devices/SLICE_1486.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__4__N_492   Source: I2C_Devices/SLICE_1485.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__3__N_498   Source: I2C_Devices/SLICE_1484.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__2__N_504   Source: I2C_Devices/SLICE_1204.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__1__N_510   Source: I2C_Devices/SLICE_1483.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__0__N_516   Source: I2C_Devices/SLICE_1484.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__7__N_522   Source: I2C_Devices/SLICE_1485.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__6__N_528   Source: I2C_Devices/SLICE_1486.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__5__N_534   Source: I2C_Devices/SLICE_1487.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__4__N_540   Source: I2C_Devices/SLICE_1488.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__3__N_546   Source: I2C_Devices/SLICE_1489.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__2__N_552   Source: I2C_Devices/SLICE_1490.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__1__N_558   Source: I2C_Devices/SLICE_1491.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__0__N_564   Source: I2C_Devices/SLICE_1496.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__7__N_570   Source: I2C_Devices/SLICE_1497.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__6__N_576   Source: I2C_Devices/SLICE_1498.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__5__N_582   Source: I2C_Devices/SLICE_1483.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__4__N_588   Source: I2C_Devices/SLICE_1500.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__3__N_594   Source: I2C_Devices/SLICE_1501.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__2__N_600   Source: I2C_Devices/SLICE_1502.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__1__N_606   Source: I2C_Devices/SLICE_1503.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__0__N_612   Source: I2C_Devices/SLICE_1380.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__7__N_618   Source: I2C_Devices/SLICE_1504.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__6__N_624   Source: I2C_Devices/SLICE_1505.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__5__N_630   Source: I2C_Devices/SLICE_1506.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__4__N_636   Source: I2C_Devices/SLICE_1507.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__3__N_642   Source: I2C_Devices/SLICE_1508.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__2__N_648   Source: I2C_Devices/SLICE_1510.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__1__N_654   Source: SLICE_1073.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__0__N_660   Source: I2C_Devices/SLICE_1510.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__7__N_682   Source: I2C_Devices/SLICE_1508.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__6__N_688   Source: I2C_Devices/SLICE_1507.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__5__N_694   Source: I2C_Devices/SLICE_1506.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__4__N_700   Source: I2C_Devices/SLICE_1505.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__3__N_706   Source: I2C_Devices/SLICE_1504.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__2__N_712   Source: I2C_Devices/SLICE_1503.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__1__N_718   Source: I2C_Devices/SLICE_1502.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__0__N_724   Source: I2C_Devices/SLICE_1501.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__7__N_730   Source: I2C_Devices/SLICE_1500.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__6__N_736   Source: I2C_Devices/SLICE_1498.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__5__N_742   Source: I2C_Devices/SLICE_1497.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__4__N_748   Source: I2C_Devices/SLICE_1496.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__3__N_754   Source: I2C_Devices/SLICE_1491.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__2__N_760   Source: I2C_Devices/SLICE_1490.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__1__N_766   Source: I2C_Devices/SLICE_1489.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__0__N_772   Source: I2C_Devices/SLICE_1488.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+Clock Domain: resetn   Source: SLICE_1363.Q0   Loads: 100
+   No transfer within this clock domain is found
+
+Clock Domain: i2c2_sclo   Source: I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0.I2C2SCLO   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: i2c2_scli   Source: scl_2.PAD   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: i2c1_sclo   Source: I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0.I2C1SCLO   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: i2c1_scli   Source: scl_1.PAD   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: ZLV/next_state_4__N_1576   Source: ZLV/i40920/SLICE_981.OFX0   Loads: 3
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/next_addr_7__N_1168   Source: I2C_Devices/SLICE_1202.F1   Loads: 24
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/next_ack_flag_N_1498   Source: I2C_Devices/i2c/SLICE_1223.F1   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/data_latch   Source: I2C_Devices/i2c/SLICE_358.Q0   Loads: 18
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1266   Source: I2C_Devices/i2c/SLICE_1451.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1265   Source: SLICE_1548.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_445   Source: SLICE_1200.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_442   Source: I2C_Devices/SLICE_1349.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_439   Source: I2C_Devices/SLICE_1430.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__7__N_473   Source: I2C_Devices/SLICE_1378.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__6__N_480   Source: I2C_Devices/SLICE_1487.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__5__N_486   Source: I2C_Devices/SLICE_1486.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__4__N_492   Source: I2C_Devices/SLICE_1485.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__3__N_498   Source: I2C_Devices/SLICE_1484.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__2__N_504   Source: I2C_Devices/SLICE_1204.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__1__N_510   Source: I2C_Devices/SLICE_1483.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__0__N_516   Source: I2C_Devices/SLICE_1484.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__7__N_522   Source: I2C_Devices/SLICE_1485.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__6__N_528   Source: I2C_Devices/SLICE_1486.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__5__N_534   Source: I2C_Devices/SLICE_1487.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__4__N_540   Source: I2C_Devices/SLICE_1488.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__3__N_546   Source: I2C_Devices/SLICE_1489.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__2__N_552   Source: I2C_Devices/SLICE_1490.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__1__N_558   Source: I2C_Devices/SLICE_1491.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__0__N_564   Source: I2C_Devices/SLICE_1496.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__7__N_570   Source: I2C_Devices/SLICE_1497.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__6__N_576   Source: I2C_Devices/SLICE_1498.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__5__N_582   Source: I2C_Devices/SLICE_1483.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__4__N_588   Source: I2C_Devices/SLICE_1500.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__3__N_594   Source: I2C_Devices/SLICE_1501.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__2__N_600   Source: I2C_Devices/SLICE_1502.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__1__N_606   Source: I2C_Devices/SLICE_1503.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__0__N_612   Source: I2C_Devices/SLICE_1380.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__7__N_618   Source: I2C_Devices/SLICE_1504.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__6__N_624   Source: I2C_Devices/SLICE_1505.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__5__N_630   Source: I2C_Devices/SLICE_1506.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__4__N_636   Source: I2C_Devices/SLICE_1507.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__3__N_642   Source: I2C_Devices/SLICE_1508.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__2__N_648   Source: I2C_Devices/SLICE_1510.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__1__N_654   Source: SLICE_1073.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__0__N_660   Source: I2C_Devices/SLICE_1510.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__7__N_682   Source: I2C_Devices/SLICE_1508.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__6__N_688   Source: I2C_Devices/SLICE_1507.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__5__N_694   Source: I2C_Devices/SLICE_1506.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__4__N_700   Source: I2C_Devices/SLICE_1505.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__3__N_706   Source: I2C_Devices/SLICE_1504.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__2__N_712   Source: I2C_Devices/SLICE_1503.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__1__N_718   Source: I2C_Devices/SLICE_1502.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__0__N_724   Source: I2C_Devices/SLICE_1501.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__7__N_730   Source: I2C_Devices/SLICE_1500.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__6__N_736   Source: I2C_Devices/SLICE_1498.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__5__N_742   Source: I2C_Devices/SLICE_1497.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__4__N_748   Source: I2C_Devices/SLICE_1496.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__3__N_754   Source: I2C_Devices/SLICE_1491.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__2__N_760   Source: I2C_Devices/SLICE_1490.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__1__N_766   Source: I2C_Devices/SLICE_1489.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__0__N_772   Source: I2C_Devices/SLICE_1488.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: AMC/next_state_4__N_1669   Source: AMC/i40906/SLICE_985.OFX0   Loads: 5
+   No transfer within this clock domain is found
+
+Clock Domain: AMC/next_complete_signal_N_1862   Source: AMC/i22/SLICE_982.OFX0   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: AMC/next_auto_state_8__N_1765   Source: AMC/SLICE_1268.F0   Loads: 5
+   No transfer within this clock domain is found
+
+
+<A name="ptwr_set_ts"></A><B><U><big>Timing summary (Setup):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 76504 paths, 1 nets, and 10495 connections (95.29% coverage)
+
+--------------------------------------------------------------------------------
+<A name="Par_Twr_hold"></A><B><U><big>Lattice TRACE Report - Hold, Version Diamond (64-bit) 3.11.2.446</big></U></B>
+Sun Sep 13 15:51:52 2020
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2019 Lattice Semiconductor Corporation,  All rights reserved.
+
+<A name="ptwr_hold_ri"></A><B><U><big>Report Information</big></U></B>
+------------------
+Command line:    trce -v 10 -gt -sethld -sp 5 -sphld m -o Drone2EthanFork_impl1.twr -gui -msgset C:/Users/mintbox/Documents/LatticeDiamondProjects/Ethans-Fork-Drone2-Capstone/Drone2_LS_Capstone/Source-Code/Drone2EthanFork/promote.xml Drone2EthanFork_impl1.ncd Drone2EthanFork_impl1.prf 
+Design file:     drone2ethanfork_impl1.ncd
+Preference file: drone2ethanfork_impl1.prf
+Device,speed:    LCMXO3LF-6900C,m
+Report level:    verbose report, limited to 10 items per preference
+--------------------------------------------------------------------------------
+
+<A name="ptwr_hold_ps"></A><B><U><big>Preference Summary</big></U></B>
+
+<LI><A href='#par_twr_pref_1_0' Target='right'>FREQUENCY NET "sys_clk" 38.000000 MHz (0 errors)</A></LI>            4096 items scored, 0 timing errors detected.
+
+51 potential circuit loops found in timing analysis.
+BLOCK ASYNCPATHS
+BLOCK RESETPATHS
+BLOCK JTAG PATHS
+--------------------------------------------------------------------------------
+
+
+Derating parameters
+-------------------
+Voltage:    3.300 V
+
+VCCIO Voltage:
+                   3.300 V (Bank 0, defined by PAR)
+                   3.300 V (Bank 1, defined by PAR)
+                   3.300 V (Bank 2, defined by PAR)
+                   3.300 V (Bank 3, defined by PAR)
+                   3.300 V (Bank 4)
+                   3.300 V (Bank 5)
+
+
+
+================================================================================
+<A name="par_twr_pref_1_0"></A>Preference: FREQUENCY NET "sys_clk" 38.000000 MHz ;
+            4096 items scored, 0 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Passed: The following path meets requirements by 0.304ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/i2c/next_one_byte_ready_702  (from sys_clk +)
+   Destination:    FF         Data in        I2C_Devices/i2c/one_byte_ready_695  (to sys_clk +)
+
+   Delay:               0.285ns  (46.7% logic, 53.3% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.285ns physical path delay I2C_Devices/i2c/SLICE_395 to I2C_Devices/i2c/SLICE_398 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.304ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/i2c/SLICE_395 to I2C_Devices/i2c/SLICE_398:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R11C18C.CLK to     R11C18C.Q0 I2C_Devices/i2c/SLICE_395 (from sys_clk)
+ROUTE         1     0.152     R11C18C.Q0 to     R11C18B.M1 I2C_Devices/i2c/next_one_byte_ready (to sys_clk)
+                  --------
+                    0.285   (46.7% logic, 53.3% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_395:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R11C18C.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/i2c/SLICE_398:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R11C18B.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.306ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart/uart_core_inst/u_txmitt/tx_in_shift_s_136  (from sys_clk +)
+   Destination:    FF         Data in        uart/uart_core_inst/u_txmitt/tx_in_shift_s1_134  (to sys_clk +)
+
+   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay uart/uart_core_inst/u_txmitt/SLICE_880 to uart/uart_core_inst/u_txmitt/SLICE_880 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
+
+ Physical Path Details:
+
+      Data path uart/uart_core_inst/u_txmitt/SLICE_880 to uart/uart_core_inst/u_txmitt/SLICE_880:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R16C9D.CLK to      R16C9D.Q0 uart/uart_core_inst/u_txmitt/SLICE_880 (from sys_clk)
+ROUTE         2     0.154      R16C9D.Q0 to      R16C9D.M1 uart/uart_core_inst/u_txmitt/tx_in_shift_s (to sys_clk)
+                  --------
+                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to uart/uart_core_inst/u_txmitt/SLICE_880:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to     R16C9D.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to uart/uart_core_inst/u_txmitt/SLICE_880:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to     R16C9D.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.306ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/VL53L1X_range_mm_i0_i4  (from sys_clk +)
+   Destination:    FF         Data in        VL53L1X_range_mm_i4  (to sys_clk +)
+
+   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay I2C_Devices/SLICE_676 to SLICE_656 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/SLICE_676 to SLICE_656:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R16C35B.CLK to     R16C35B.Q0 I2C_Devices/SLICE_676 (from sys_clk)
+ROUTE         1     0.154     R16C35B.Q0 to     R17C35B.M1 next_VL53L1X_range_mm_4 (to sys_clk)
+                  --------
+                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/SLICE_676:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R16C35B.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to SLICE_656:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R17C35B.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.306ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              ZLV/z_altitude_mm_latched_i0_i6  (from sys_clk +)
+   Destination:    FF         Data in        ZLV/z_altitude_mm_previous_i0_i6  (to sys_clk +)
+
+   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay SLICE_1156 to SLICE_1289 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
+
+ Physical Path Details:
+
+      Data path SLICE_1156 to SLICE_1289:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R19C25B.CLK to     R19C25B.Q1 SLICE_1156 (from sys_clk)
+ROUTE         2     0.154     R19C25B.Q1 to     R19C25A.M1 ZLV/z_altitude_mm_latched_6 (to sys_clk)
+                  --------
+                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to SLICE_1156:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R19C25B.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to SLICE_1289:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R19C25A.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.306ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart/uart_core_inst/u_rxcver/sin_d0_165  (from sys_clk +)
+   Destination:    FF         Data in        uart/uart_core_inst/u_rxcver/sin_d0_delay_166  (to sys_clk +)
+
+   Delay:               0.287ns  (46.3% logic, 53.7% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.287ns physical path delay SLICE_868 to SLICE_868 meets
+     -0.019ns M_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.019ns) by 0.306ns
+
+ Physical Path Details:
+
+      Data path SLICE_868 to SLICE_868:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133     R9C13D.CLK to      R9C13D.Q1 SLICE_868 (from sys_clk)
+ROUTE         4     0.154      R9C13D.Q1 to      R9C13D.M0 uart/uart_core_inst/u_rxcver/sin_d0 (to sys_clk)
+                  --------
+                    0.287   (46.3% logic, 53.7% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to SLICE_868:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to     R9C13D.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to SLICE_868:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to     R9C13D.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.339ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              uart/uart_core_inst/u_intface/ack_o_146  (from sys_clk +)
+   Destination:    FF         Data in        uart/uart_core_inst/u_intface/ack_o_146  (to sys_clk +)
+
+   Delay:               0.282ns  (47.2% logic, 52.8% route), 1 logic levels.
+
+ Constraint Details:
+
+      0.282ns physical path delay uart/uart_core_inst/u_intface/SLICE_834 to uart/uart_core_inst/u_intface/SLICE_834 meets
+     -0.057ns LSR_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.057ns) by 0.339ns
+
+ Physical Path Details:
+
+      Data path uart/uart_core_inst/u_intface/SLICE_834 to uart/uart_core_inst/u_intface/SLICE_834:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R16C12D.CLK to     R16C12D.Q0 uart/uart_core_inst/u_intface/SLICE_834 (from sys_clk)
+ROUTE         7     0.149     R16C12D.Q0 to    R16C12D.LSR uart/next_state_9_N_4541_6 (to sys_clk)
+                  --------
+                    0.282   (47.2% logic, 52.8% route), 1 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to uart/uart_core_inst/u_intface/SLICE_834:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R16C12D.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to uart/uart_core_inst/u_intface/SLICE_834:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.443        OSC.OSC to    R16C12D.CLK sys_clk
+                  --------
+                    1.443   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/master_trigger_count_ms_i15  (from sys_clk +)
+   Destination:    FF         Data in        I2C_Devices/master_trigger_count_ms_i15  (to sys_clk +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay I2C_Devices/SLICE_112 to I2C_Devices/SLICE_112 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/SLICE_112 to I2C_Devices/SLICE_112:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R23C20A.CLK to     R23C20A.Q0 I2C_Devices/SLICE_112 (from sys_clk)
+ROUTE         1     0.130     R23C20A.Q0 to     R23C20A.A0 I2C_Devices/master_trigger_count_ms_15
+CTOF_DEL    ---     0.101     R23C20A.A0 to     R23C20A.F0 I2C_Devices/SLICE_112
+ROUTE         1     0.000     R23C20A.F0 to    R23C20A.DI0 I2C_Devices/master_trigger_count_ms_20_N_997_15 (to sys_clk)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/SLICE_112:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C20A.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/SLICE_112:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C20A.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/master_trigger_count_ms_i11  (from sys_clk +)
+   Destination:    FF         Data in        I2C_Devices/master_trigger_count_ms_i11  (to sys_clk +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay I2C_Devices/SLICE_114 to I2C_Devices/SLICE_114 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/SLICE_114 to I2C_Devices/SLICE_114:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R23C19C.CLK to     R23C19C.Q0 I2C_Devices/SLICE_114 (from sys_clk)
+ROUTE         1     0.130     R23C19C.Q0 to     R23C19C.A0 I2C_Devices/master_trigger_count_ms_11
+CTOF_DEL    ---     0.101     R23C19C.A0 to     R23C19C.F0 I2C_Devices/SLICE_114
+ROUTE         1     0.000     R23C19C.F0 to    R23C19C.DI0 I2C_Devices/master_trigger_count_ms_20_N_997_11 (to sys_clk)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/SLICE_114:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C19C.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/SLICE_114:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C19C.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/master_trigger_count_ms_i17  (from sys_clk +)
+   Destination:    FF         Data in        I2C_Devices/master_trigger_count_ms_i17  (to sys_clk +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay I2C_Devices/SLICE_111 to I2C_Devices/SLICE_111 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/SLICE_111 to I2C_Devices/SLICE_111:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R23C20B.CLK to     R23C20B.Q0 I2C_Devices/SLICE_111 (from sys_clk)
+ROUTE         1     0.130     R23C20B.Q0 to     R23C20B.A0 I2C_Devices/master_trigger_count_ms_17
+CTOF_DEL    ---     0.101     R23C20B.A0 to     R23C20B.F0 I2C_Devices/SLICE_111
+ROUTE         1     0.000     R23C20B.F0 to    R23C20B.DI0 I2C_Devices/master_trigger_count_ms_20_N_997_17 (to sys_clk)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/SLICE_111:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C20B.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/SLICE_111:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C20B.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+
+Passed: The following path meets requirements by 0.377ns
+
+ Logical Details:  Cell type  Pin type       Cell/ASIC name  (clock net +/-)
+
+   Source:         FF         Q              I2C_Devices/master_trigger_count_ms_i13  (from sys_clk +)
+   Destination:    FF         Data in        I2C_Devices/master_trigger_count_ms_i13  (to sys_clk +)
+
+   Delay:               0.364ns  (64.3% logic, 35.7% route), 2 logic levels.
+
+ Constraint Details:
+
+      0.364ns physical path delay I2C_Devices/SLICE_113 to I2C_Devices/SLICE_113 meets
+     -0.013ns DIN_HLD and
+      0.000ns delay constraint less
+      0.000ns skew requirement (totaling -0.013ns) by 0.377ns
+
+ Physical Path Details:
+
+      Data path I2C_Devices/SLICE_113 to I2C_Devices/SLICE_113:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+REG_DEL     ---     0.133    R23C19D.CLK to     R23C19D.Q0 I2C_Devices/SLICE_113 (from sys_clk)
+ROUTE         1     0.130     R23C19D.Q0 to     R23C19D.A0 I2C_Devices/master_trigger_count_ms_13
+CTOF_DEL    ---     0.101     R23C19D.A0 to     R23C19D.F0 I2C_Devices/SLICE_113
+ROUTE         1     0.000     R23C19D.F0 to    R23C19D.DI0 I2C_Devices/n619 (to sys_clk)
+                  --------
+                    0.364   (64.3% logic, 35.7% route), 2 logic levels.
+
+ Clock Skew Details: 
+
+      Source Clock Path OSCH_inst to I2C_Devices/SLICE_113:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C19D.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+      Destination Clock Path OSCH_inst to I2C_Devices/SLICE_113:
+
+   Name    Fanout   Delay (ns)          Site               Resource
+ROUTE       436     1.425        OSC.OSC to    R23C19D.CLK sys_clk
+                  --------
+                    1.425   (0.0% logic, 100.0% route), 0 logic levels.
+
+<A name="ptwr_hold_rs"></A><B><U><big>Report Summary</big></U></B>
+--------------
+----------------------------------------------------------------------------
+Preference(MIN Delays)                  |   Constraint|       Actual|Levels
+----------------------------------------------------------------------------
+                                        |             |             |
+FREQUENCY NET "sys_clk" 38.000000 MHz ; |     0.000 ns|     0.304 ns|   1  
+                                        |             |             |
+----------------------------------------------------------------------------
+
+
+All preferences were met.
+
+
+<A name="ptwr_hold_clkda"></A><B><U><big>Clock Domains Analysis</big></U></B>
+------------------------
+
+Found 67 clocks:
+
+Clock Domain: us_clk   Source: us_clk_divider/SLICE_886.Q0   Loads: 202
+   No transfer within this clock domain is found
+
+Clock Domain: sys_clk   Source: OSCH_inst.OSC   Loads: 436
+   Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;
+
+   Data transfers from:
+   Clock Domain: us_clk   Source: us_clk_divider/SLICE_886.Q0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 66
+
+   Clock Domain: resetn   Source: SLICE_1363.Q0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: ZLV/next_state_4__N_1576   Source: ZLV/i40920/SLICE_981.OFX0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 5
+
+   Clock Domain: I2C_Devices/i2c/next_addr_7__N_1168   Source: I2C_Devices/SLICE_1202.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 13
+
+   Clock Domain: I2C_Devices/i2c/next_ack_flag_N_1498   Source: I2C_Devices/i2c/SLICE_1223.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/i2c/data_latch   Source: I2C_Devices/i2c/SLICE_358.Q0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 8
+
+   Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1266   Source: I2C_Devices/i2c/SLICE_1451.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1265   Source: SLICE_1548.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_445   Source: SLICE_1200.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_442   Source: I2C_Devices/SLICE_1349.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_439   Source: I2C_Devices/SLICE_1430.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__7__N_473   Source: I2C_Devices/SLICE_1378.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__6__N_480   Source: I2C_Devices/SLICE_1487.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__5__N_486   Source: I2C_Devices/SLICE_1486.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__4__N_492   Source: I2C_Devices/SLICE_1485.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__3__N_498   Source: I2C_Devices/SLICE_1484.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__2__N_504   Source: I2C_Devices/SLICE_1204.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__1__N_510   Source: I2C_Devices/SLICE_1483.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__0__N_516   Source: I2C_Devices/SLICE_1484.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__7__N_522   Source: I2C_Devices/SLICE_1485.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__6__N_528   Source: I2C_Devices/SLICE_1486.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__5__N_534   Source: I2C_Devices/SLICE_1487.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__4__N_540   Source: I2C_Devices/SLICE_1488.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__3__N_546   Source: I2C_Devices/SLICE_1489.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__2__N_552   Source: I2C_Devices/SLICE_1490.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__1__N_558   Source: I2C_Devices/SLICE_1491.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__0__N_564   Source: I2C_Devices/SLICE_1496.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__7__N_570   Source: I2C_Devices/SLICE_1497.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__6__N_576   Source: I2C_Devices/SLICE_1498.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__5__N_582   Source: I2C_Devices/SLICE_1483.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__4__N_588   Source: I2C_Devices/SLICE_1500.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__3__N_594   Source: I2C_Devices/SLICE_1501.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__2__N_600   Source: I2C_Devices/SLICE_1502.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__1__N_606   Source: I2C_Devices/SLICE_1503.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__0__N_612   Source: I2C_Devices/SLICE_1380.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__7__N_618   Source: I2C_Devices/SLICE_1504.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__6__N_624   Source: I2C_Devices/SLICE_1505.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__5__N_630   Source: I2C_Devices/SLICE_1506.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__4__N_636   Source: I2C_Devices/SLICE_1507.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__3__N_642   Source: I2C_Devices/SLICE_1508.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__2__N_648   Source: I2C_Devices/SLICE_1510.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__1__N_654   Source: SLICE_1073.F1
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__0__N_660   Source: I2C_Devices/SLICE_1510.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__7__N_682   Source: I2C_Devices/SLICE_1508.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__6__N_688   Source: I2C_Devices/SLICE_1507.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__5__N_694   Source: I2C_Devices/SLICE_1506.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__4__N_700   Source: I2C_Devices/SLICE_1505.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__3__N_706   Source: I2C_Devices/SLICE_1504.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__2__N_712   Source: I2C_Devices/SLICE_1503.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__1__N_718   Source: I2C_Devices/SLICE_1502.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__0__N_724   Source: I2C_Devices/SLICE_1501.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__7__N_730   Source: I2C_Devices/SLICE_1500.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__6__N_736   Source: I2C_Devices/SLICE_1498.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__5__N_742   Source: I2C_Devices/SLICE_1497.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__4__N_748   Source: I2C_Devices/SLICE_1496.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__3__N_754   Source: I2C_Devices/SLICE_1491.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__2__N_760   Source: I2C_Devices/SLICE_1490.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__1__N_766   Source: I2C_Devices/SLICE_1489.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+   Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__0__N_772   Source: I2C_Devices/SLICE_1488.F0
+      Covered under: FREQUENCY NET "sys_clk" 38.000000 MHz ;   Transfers: 1
+
+Clock Domain: resetn   Source: SLICE_1363.Q0   Loads: 100
+   No transfer within this clock domain is found
+
+Clock Domain: i2c2_sclo   Source: I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0.I2C2SCLO   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: i2c2_scli   Source: scl_2.PAD   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: i2c1_sclo   Source: I2C_Devices/i2c/data_rx_7__I_0/EFBInst_0.I2C1SCLO   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: i2c1_scli   Source: scl_1.PAD   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: ZLV/next_state_4__N_1576   Source: ZLV/i40920/SLICE_981.OFX0   Loads: 3
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/next_addr_7__N_1168   Source: I2C_Devices/SLICE_1202.F1   Loads: 24
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/next_ack_flag_N_1498   Source: I2C_Devices/i2c/SLICE_1223.F1   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/data_latch   Source: I2C_Devices/i2c/SLICE_358.Q0   Loads: 18
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1266   Source: I2C_Devices/i2c/SLICE_1451.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/i2c/byte_rd_left_5__N_1265   Source: SLICE_1548.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_445   Source: SLICE_1200.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_442   Source: I2C_Devices/SLICE_1349.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_index_5__N_439   Source: I2C_Devices/SLICE_1430.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__7__N_473   Source: I2C_Devices/SLICE_1378.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__6__N_480   Source: I2C_Devices/SLICE_1487.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__5__N_486   Source: I2C_Devices/SLICE_1486.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__4__N_492   Source: I2C_Devices/SLICE_1485.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__3__N_498   Source: I2C_Devices/SLICE_1484.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__2__N_504   Source: I2C_Devices/SLICE_1204.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__1__N_510   Source: I2C_Devices/SLICE_1483.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_7__0__N_516   Source: I2C_Devices/SLICE_1484.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__7__N_522   Source: I2C_Devices/SLICE_1485.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__6__N_528   Source: I2C_Devices/SLICE_1486.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__5__N_534   Source: I2C_Devices/SLICE_1487.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__4__N_540   Source: I2C_Devices/SLICE_1488.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__3__N_546   Source: I2C_Devices/SLICE_1489.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__2__N_552   Source: I2C_Devices/SLICE_1490.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__1__N_558   Source: I2C_Devices/SLICE_1491.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_6__0__N_564   Source: I2C_Devices/SLICE_1496.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__7__N_570   Source: I2C_Devices/SLICE_1497.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__6__N_576   Source: I2C_Devices/SLICE_1498.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__5__N_582   Source: I2C_Devices/SLICE_1483.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__4__N_588   Source: I2C_Devices/SLICE_1500.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__3__N_594   Source: I2C_Devices/SLICE_1501.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__2__N_600   Source: I2C_Devices/SLICE_1502.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__1__N_606   Source: I2C_Devices/SLICE_1503.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_5__0__N_612   Source: I2C_Devices/SLICE_1380.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__7__N_618   Source: I2C_Devices/SLICE_1504.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__6__N_624   Source: I2C_Devices/SLICE_1505.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__5__N_630   Source: I2C_Devices/SLICE_1506.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__4__N_636   Source: I2C_Devices/SLICE_1507.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__3__N_642   Source: I2C_Devices/SLICE_1508.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__2__N_648   Source: I2C_Devices/SLICE_1510.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__1__N_654   Source: SLICE_1073.F1   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_4__0__N_660   Source: I2C_Devices/SLICE_1510.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__7__N_682   Source: I2C_Devices/SLICE_1508.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__6__N_688   Source: I2C_Devices/SLICE_1507.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__5__N_694   Source: I2C_Devices/SLICE_1506.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__4__N_700   Source: I2C_Devices/SLICE_1505.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__3__N_706   Source: I2C_Devices/SLICE_1504.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__2__N_712   Source: I2C_Devices/SLICE_1503.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__1__N_718   Source: I2C_Devices/SLICE_1502.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_1__0__N_724   Source: I2C_Devices/SLICE_1501.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__7__N_730   Source: I2C_Devices/SLICE_1500.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__6__N_736   Source: I2C_Devices/SLICE_1498.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__5__N_742   Source: I2C_Devices/SLICE_1497.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__4__N_748   Source: I2C_Devices/SLICE_1496.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__3__N_754   Source: I2C_Devices/SLICE_1491.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__2__N_760   Source: I2C_Devices/SLICE_1490.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__1__N_766   Source: I2C_Devices/SLICE_1489.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: I2C_Devices/VL53L1X_data_rx_reg_0__0__N_772   Source: I2C_Devices/SLICE_1488.F0   Loads: 2
+   No transfer within this clock domain is found
+
+Clock Domain: AMC/next_state_4__N_1669   Source: AMC/i40906/SLICE_985.OFX0   Loads: 5
+   No transfer within this clock domain is found
+
+Clock Domain: AMC/next_complete_signal_N_1862   Source: AMC/i22/SLICE_982.OFX0   Loads: 1
+   No transfer within this clock domain is found
+
+Clock Domain: AMC/next_auto_state_8__N_1765   Source: AMC/SLICE_1268.F0   Loads: 5
+   No transfer within this clock domain is found
+
+
+<A name="ptwr_hold_ts"></A><B><U><big>Timing summary (Hold):</big></U></B>
+---------------
+
+Timing errors: 0  Score: 0
+Cumulative negative slack: 0
+
+Constraints cover 76504 paths, 1 nets, and 10495 connections (95.29% coverage)
+
+
+
+<A name="ptwr_ts"></A><B><U><big>Timing summary (Setup and Hold):</big></U></B>
+---------------
+
+Timing errors: 0 (setup), 0 (hold)
+Score: 0 (setup), 0 (hold)
+Cumulative negative slack: 0 (0+0)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

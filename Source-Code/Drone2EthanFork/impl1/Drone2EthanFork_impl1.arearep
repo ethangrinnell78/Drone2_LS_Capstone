@@ -1,0 +1,463 @@
+----------------------------------------------------------------------
+Report for cell drone2.TECH
+Register bits:  1057 of 7485 (14.122%)
+I/O cells:      28
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                 BB         4          100.0
+                              CCU2D       224          100.0
+                                EFB         1          100.0
+                            FD1P3AX       219          100.0
+                            FD1P3AY        11          100.0
+                            FD1P3BX        11          100.0
+                            FD1P3DX        16          100.0
+                            FD1P3IX       152          100.0
+                            FD1P3JX        49          100.0
+                             FD1S1A        17          100.0
+                            FD1S1AY         3          100.0
+                             FD1S1D        55          100.0
+                             FD1S1I        14          100.0
+                            FD1S3AX       179          100.0
+                            FD1S3AY        68          100.0
+                            FD1S3BX        53          100.0
+                            FD1S3DX        86          100.0
+                            FD1S3IX       111          100.0
+                            FD1S3JX        13          100.0
+                                GSR         1          100.0
+                                 IB         7          100.0
+                                INV         1          100.0
+                            L6MUX21        41          100.0
+                               LUT4      2013          100.0
+                                 OB        17          100.0
+                               OSCH         1          100.0
+                              PFUMX       235          100.0
+                          ROM256X1A         6          100.0
+SUB MODULES
+                         I2C_EFB_WB         1
+               auto_mode_controller         1
+                        flight_mode         1
+i2c_device_driver(INIT_INTERVAL=16'b01111101000,POLL_INTERVAL=16'b010100)         1
+                         i2c_module         1
+             intface(CLK_IN_MHZ=38)         1
+                      pwm_generator         1
+                pwm_generator_block         1
+             pwm_generator_block_U7         1
+             pwm_generator_block_U8         1
+             pwm_generator_block_U9         1
+                         pwm_reader         1
+pwm_reader(DEFAULT_PWM_TIME_HIGH_US=16'b01111101000)         1
+                      pwm_reader_U2         1
+                      pwm_reader_U3         1
+                      pwm_reader_U5         1
+                       pwm_to_value         1
+                    pwm_to_value_U0         1
+                    pwm_to_value_U1         1
+                    pwm_to_value_U4         1
+                    pwm_to_value_U6         1
+                           receiver         1
+                     rxcver(FIFO=0)         1
+                throttle_controller         1
+                txmitt(DATAWIDTH=8)         1
+           uart_core(CLK_IN_MHZ=38)         1
+uart_top(NUM_DEBUG_ELEMENTS=8'b010010,FIXED_INTERVAL=0)         1
+                             us_clk         1
+              yaw_angle_accumulator         1
+             z_linear_velocity_comp         1
+                              TOTAL      3638
+----------------------------------------------------------------------
+Report for cell throttle_controller.v1
+Instance Path : TC
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX         1            0.5
+                            FD1S3AX         1            0.6
+                            FD1S3IX         6            5.4
+                            FD1S3JX         1            7.7
+                               LUT4        34            1.7
+                              PFUMX         5            2.1
+                              TOTAL        48
+----------------------------------------------------------------------
+Report for cell us_clk.v1
+Instance Path : us_clk_divider
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         8            3.6
+                            FD1S3AX         2            1.1
+                            FD1S3AY         1            1.5
+                            FD1S3IX        13           11.7
+                               LUT4        12            0.6
+                              TOTAL        36
+----------------------------------------------------------------------
+Report for cell receiver.v1
+Instance Path : receiver
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        45           20.1
+                            FD1P3AX        82           37.4
+                            FD1P3IX        13            8.6
+                            FD1P3JX        30           61.2
+                            FD1S3AX        50           27.9
+                            FD1S3IX         5            4.5
+                               LUT4       331           16.4
+                              PFUMX        13            5.5
+SUB MODULES
+                         pwm_reader         1
+pwm_reader(DEFAULT_PWM_TIME_HIGH_US=16'b01111101000)         1
+                      pwm_reader_U2         1
+                      pwm_reader_U3         1
+                      pwm_reader_U5         1
+                       pwm_to_value         1
+                    pwm_to_value_U0         1
+                    pwm_to_value_U1         1
+                    pwm_to_value_U4         1
+                    pwm_to_value_U6         1
+                              TOTAL       579
+----------------------------------------------------------------------
+Report for cell pwm_reader.v1
+Instance Path : receiver.yaw_reader
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         9            4.0
+                            FD1P3AX        16            7.3
+                            FD1P3IX         3            2.0
+                            FD1P3JX         6           12.2
+                            FD1S3AX         2            1.1
+                            FD1S3IX         1            0.9
+                               LUT4        55            2.7
+                              PFUMX         4            1.7
+                              TOTAL        96
+----------------------------------------------------------------------
+Report for cell pwm_to_value.v1
+Instance Path : receiver.yaw_pwm_to_value
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         8            4.5
+                               LUT4        13            0.6
+                              TOTAL        21
+----------------------------------------------------------------------
+Report for cell pwm_reader(DEFAULT_PWM_TIME_HIGH_US=16'b01111101000).v1
+Instance Path : receiver.throttle_reader
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         9            4.0
+                            FD1P3AX        18            8.2
+                            FD1P3IX         1            0.7
+                            FD1P3JX         6           12.2
+                            FD1S3AX         2            1.1
+                            FD1S3IX         1            0.9
+                               LUT4        61            3.0
+                              PFUMX         3            1.3
+                              TOTAL       101
+----------------------------------------------------------------------
+Report for cell pwm_to_value_U0.v1
+Instance Path : receiver.throttle_pwm_to_value
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         8            4.5
+                               LUT4        13            0.6
+                              TOTAL        21
+----------------------------------------------------------------------
+Report for cell pwm_to_value_U1.v1
+Instance Path : receiver.swab_pwm_to_value
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         8            4.5
+                               LUT4        10            0.5
+                              TOTAL        18
+----------------------------------------------------------------------
+Report for cell pwm_reader_U2.v1
+Instance Path : receiver.swa_swb_reader
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         9            4.0
+                            FD1P3AX        16            7.3
+                            FD1P3IX         3            2.0
+                            FD1P3JX         6           12.2
+                            FD1S3AX         2            1.1
+                            FD1S3IX         1            0.9
+                               LUT4        48            2.4
+                              PFUMX         2            0.9
+                              TOTAL        87
+----------------------------------------------------------------------
+Report for cell pwm_reader_U3.v1
+Instance Path : receiver.roll_reader
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         9            4.0
+                            FD1P3AX        16            7.3
+                            FD1P3IX         3            2.0
+                            FD1P3JX         6           12.2
+                            FD1S3AX         2            1.1
+                            FD1S3IX         1            0.9
+                               LUT4        48            2.4
+                              PFUMX         2            0.9
+                              TOTAL        87
+----------------------------------------------------------------------
+Report for cell pwm_to_value_U4.v1
+Instance Path : receiver.roll_pwm_to_value
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         8            4.5
+                               LUT4        11            0.5
+                              TOTAL        19
+----------------------------------------------------------------------
+Report for cell pwm_reader_U5.v1
+Instance Path : receiver.pitch_reader
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         9            4.0
+                            FD1P3AX        16            7.3
+                            FD1P3IX         3            2.0
+                            FD1P3JX         6           12.2
+                            FD1S3AX         2            1.1
+                            FD1S3IX         1            0.9
+                               LUT4        50            2.5
+                              PFUMX         1            0.4
+                              TOTAL        88
+----------------------------------------------------------------------
+Report for cell pwm_to_value_U6.v1
+Instance Path : receiver.pitch_pwm_to_value
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         8            4.5
+                               LUT4        22            1.1
+                              PFUMX         1            0.4
+                              TOTAL        31
+----------------------------------------------------------------------
+Report for cell i2c_device_driver(INIT_INTERVAL=16'b01111101000,POLL_INTERVAL=16'b010100).v1
+Instance Path : I2C_Devices
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        95           42.4
+                                EFB         1          100.0
+                            FD1P3AX        80           36.5
+                            FD1P3AY         5           45.5
+                            FD1P3BX         6           54.5
+                            FD1P3DX        16          100.0
+                            FD1P3IX        45           29.6
+                            FD1P3JX        19           38.8
+                             FD1S1A         5           29.4
+                             FD1S1D        54           98.2
+                             FD1S1I         9           64.3
+                            FD1S3AX        21           11.7
+                            FD1S3AY        35           51.5
+                            FD1S3BX        53          100.0
+                            FD1S3DX        63           73.3
+                            FD1S3IX        53           47.7
+                            FD1S3JX         8           61.5
+                            L6MUX21        18           43.9
+                               LUT4       843           41.9
+                              PFUMX       109           46.4
+SUB MODULES
+                         I2C_EFB_WB         1
+                         i2c_module         1
+                              TOTAL      1540
+----------------------------------------------------------------------
+Report for cell i2c_module.v1
+Instance Path : I2C_Devices.i2c
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        24           10.7
+                                EFB         1          100.0
+                            FD1P3AX        10            4.6
+                            FD1P3BX         6           54.5
+                            FD1P3JX         7           14.3
+                             FD1S1A         5           29.4
+                             FD1S1D         3            5.5
+                             FD1S1I         9           64.3
+                            FD1S3AX        18           10.1
+                            FD1S3AY        31           45.6
+                            FD1S3BX         2            3.8
+                            FD1S3DX        12           14.0
+                            FD1S3IX         9            8.1
+                            L6MUX21         6           14.6
+                               LUT4       297           14.8
+                              PFUMX        44           18.7
+SUB MODULES
+                         I2C_EFB_WB         1
+                              TOTAL       485
+----------------------------------------------------------------------
+Report for cell I2C_EFB_WB.v1
+Instance Path : I2C_Devices.i2c.data_rx_7__I_0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                                EFB         1          100.0
+                               LUT4         3            0.1
+                              TOTAL         4
+----------------------------------------------------------------------
+Report for cell z_linear_velocity_comp.v1
+Instance Path : ZLV
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        20            8.9
+                            FD1P3IX        45           29.6
+                             FD1S1A         3           17.6
+                            FD1S1AY         1           33.3
+                             FD1S1I         1            7.1
+                            FD1S3AX         4            2.2
+                            FD1S3AY         1            1.5
+                               LUT4        35            1.7
+                              PFUMX         1            0.4
+                              TOTAL       111
+----------------------------------------------------------------------
+Report for cell auto_mode_controller.v1
+Instance Path : AMC
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        15            6.7
+                            FD1P3AX         7            3.2
+                            FD1P3BX         5           45.5
+                             FD1S1A         9           52.9
+                            FD1S1AY         2           66.7
+                             FD1S1D         1            1.8
+                             FD1S1I         4           28.6
+                            FD1S3AX        23           12.8
+                            FD1S3AY        25           36.8
+                            FD1S3DX        23           26.7
+                               LUT4       153            7.6
+                              PFUMX         8            3.4
+                              TOTAL       275
+----------------------------------------------------------------------
+Report for cell flight_mode.v1
+Instance Path : MODE
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         3            1.7
+                               LUT4        15            0.7
+                              TOTAL        18
+----------------------------------------------------------------------
+Report for cell pwm_generator.v1
+Instance Path : pwm_generator
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        14            6.3
+                            FD1P3IX        11            7.2
+                            FD1S3IX        24           21.6
+                            FD1S3JX         4           30.8
+                               LUT4        58            2.9
+SUB MODULES
+                pwm_generator_block         1
+             pwm_generator_block_U7         1
+             pwm_generator_block_U8         1
+             pwm_generator_block_U9         1
+                              TOTAL       115
+----------------------------------------------------------------------
+Report for cell pwm_generator_block.v1
+Instance Path : pwm_generator.pwm4
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3IX         2            1.8
+                            FD1S3JX         1            7.7
+                               LUT4         7            0.3
+                              TOTAL        10
+----------------------------------------------------------------------
+Report for cell pwm_generator_block_U7.v1
+Instance Path : pwm_generator.pwm3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3IX         2            1.8
+                            FD1S3JX         1            7.7
+                               LUT4        12            0.6
+                              TOTAL        15
+----------------------------------------------------------------------
+Report for cell pwm_generator_block_U8.v1
+Instance Path : pwm_generator.pwm2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3IX         2            1.8
+                            FD1S3JX         1            7.7
+                               LUT4         8            0.4
+                              TOTAL        11
+----------------------------------------------------------------------
+Report for cell pwm_generator_block_U9.v1
+Instance Path : pwm_generator.pwm1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3IX         2            1.8
+                            FD1S3JX         1            7.7
+                               LUT4         9            0.4
+                              TOTAL        12
+----------------------------------------------------------------------
+Report for cell yaw_angle_accumulator.v1
+Instance Path : YAAc
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                               LUT4         1            0.0
+                              TOTAL         1
+----------------------------------------------------------------------
+Report for cell uart_top(NUM_DEBUG_ELEMENTS=8'b010010,FIXED_INTERVAL=0).v1
+Instance Path : uart
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        27           12.1
+                            FD1P3AX        49           22.4
+                            FD1P3AY         6           54.5
+                            FD1P3IX        38           25.0
+                            FD1S3AX        11            6.1
+                            FD1S3AY         3            4.4
+                            FD1S3IX        10            9.0
+                            L6MUX21        23           56.1
+                               LUT4       491           24.4
+                              PFUMX        97           41.3
+SUB MODULES
+             intface(CLK_IN_MHZ=38)         1
+                     rxcver(FIFO=0)         1
+                txmitt(DATAWIDTH=8)         1
+           uart_core(CLK_IN_MHZ=38)         1
+                              TOTAL       759
+----------------------------------------------------------------------
+Report for cell uart_core(CLK_IN_MHZ=38).v1
+Instance Path : uart.uart_core_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        22            9.8
+                            FD1P3AX        45           20.5
+                            FD1P3AY         6           54.5
+                            FD1P3IX        24           15.8
+                            FD1S3AX         6            3.4
+                            FD1S3AY         3            4.4
+                               LUT4       124            6.2
+                              PFUMX        12            5.1
+SUB MODULES
+             intface(CLK_IN_MHZ=38)         1
+                     rxcver(FIFO=0)         1
+                txmitt(DATAWIDTH=8)         1
+                              TOTAL       245
+----------------------------------------------------------------------
+Report for cell txmitt(DATAWIDTH=8).v1
+Instance Path : uart.uart_core_inst.u_txmitt
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D         9            4.0
+                            FD1P3AX        19            8.7
+                            FD1P3AY         2           18.2
+                            FD1P3IX        10            6.6
+                            FD1S3AX         2            1.1
+                            FD1S3AY         1            1.5
+                               LUT4        59            2.9
+                              PFUMX        11            4.7
+                              TOTAL       113
+----------------------------------------------------------------------
+Report for cell rxcver(FIFO=0).v1
+Instance Path : uart.uart_core_inst.u_rxcver
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        13            5.8
+                            FD1P3AX        11            5.0
+                            FD1P3IX        13            8.6
+                            FD1S3AX         2            1.1
+                            FD1S3AY         2            2.9
+                               LUT4        57            2.8
+                              PFUMX         1            0.4
+                              TOTAL        99
+----------------------------------------------------------------------
+Report for cell intface(CLK_IN_MHZ=38).v1
+Instance Path : uart.uart_core_inst.u_intface
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3AX        15            6.8
+                            FD1P3AY         4           36.4
+                            FD1P3IX         1            0.7
+                            FD1S3AX         2            1.1
+                               LUT4         8            0.4
+                              TOTAL        30

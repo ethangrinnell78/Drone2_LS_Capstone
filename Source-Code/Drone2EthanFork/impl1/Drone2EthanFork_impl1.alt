@@ -1,0 +1,36 @@
+NOTE Copyright (C), 1992-2010, Lattice Semiconductor Corporation *
+NOTE All Rights Reserved *
+NOTE DATE CREATED: Sun Sep 13 15:51:57 2020 *
+NOTE DESIGN NAME: drone2 *
+NOTE DEVICE NAME: LCMXO3LF-6900C-5CABGA256 *
+NOTE PIN ASSIGNMENTS *
+NOTE PINS sout : J14 : out *
+NOTE PINS led_data_out[4] : L12 : out *
+NOTE PINS led_data_out[5] : J11 : out *
+NOTE PINS led_data_out[6] : J13 : out *
+NOTE PINS sda_2 : F14 : inout *
+NOTE PINS scl_2 : B16 : inout *
+NOTE PINS sda_1 : C9 : inout *
+NOTE PINS scl_1 : A9 : inout *
+NOTE PINS rxrdy_n : G13 : out *
+NOTE PINS led_data_out[7] : H11 : out *
+NOTE PINS sin : K16 : in *
+NOTE PINS machxo3_switch_reset_n : N1 : in *
+NOTE PINS swa_swb_pwm : B6 : in *
+NOTE PINS pitch_pwm : A10 : in *
+NOTE PINS roll_pwm : D9 : in *
+NOTE PINS yaw_pwm : B9 : in *
+NOTE PINS throttle_pwm : F7 : in *
+NOTE PINS resetn_lidar : L15 : out *
+NOTE PINS resetn_imu : E14 : out *
+NOTE PINS motor_4_pwm : E10 : out *
+NOTE PINS motor_3_pwm : B4 : out *
+NOTE PINS motor_2_pwm : R6 : out *
+NOTE PINS motor_1_pwm : P10 : out *
+NOTE PINS txrdy_n : G14 : out *
+NOTE PINS led_data_out[0] : P16 : out *
+NOTE PINS led_data_out[1] : N15 : out *
+NOTE PINS led_data_out[2] : L13 : out *
+NOTE PINS led_data_out[3] : K11 : out *
+NOTE CONFIGURATION MODE: NONE *
+NOTE COMPRESSION: on *
